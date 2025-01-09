@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <style>
-        /* Your custom CSS styles here */
+        /* Custom CSS styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -26,6 +26,15 @@
             top: 0;
             width: 100%;
             z-index: 1000;
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .navbar a {
@@ -72,35 +81,60 @@
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="container">
-        <a href="#home" class="navbar-brand">Tendai Chimuka</a>
-        <ul class="navbar-nav">
-            <li><a href="resume.html">Resume</a></li>
-        </ul>
-    </div>
-</nav>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="navbar-brand">Home</a>
+            <ul class="navbar-nav">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home">
+        <h2 class="section-title">Welcome!</h2>
+        <p>
+            My name is Tendai, and I am a Computer Engineering student at the New Jersey Institute of Technology, with a passion for software and hardware engineering and a strong interest in aviation and robotics. Pursuing a minor in Drones and Robotics allows me to dive deeper into these passions, combining technical knowledge with hands-on innovation.
+        </p>
+        <p>
+            My goal is to become a full-time software/hardware engineer applying my skills to real-world projects while continuing to learn and grow in this exciting field. 
+        </p>
+        (website under construction ^...^)
+    </p>
+    </section>
 
-<section id="projects" class="projects-section">
-    <h2 class="section-title">Projects</h2>
-    <!-- Content for projects goes here -->
-</section>
-
-<section id="professional" class="professional-section">
-    <h2 class="section-title">Professional Links</h2>
-    <!-- Content for professional links goes here -->
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="footer">
-        <p>&copy; Chimuka 2024</p>
-    </div>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <p>&copy; Tendai 2024</p>
+        </div>
+    </footer>
 
 </body>
 </html>
