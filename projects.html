@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects">
+    <title>Projects</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #222;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #444;
+            color: #0d6efd;
+        }
+
+        /* Section Styles */
+        #projects {
+            margin: 80px auto; /* Offset for fixed navbar */
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .project {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #444;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: #0d6efd;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        
+        <!-- Laser Tag Project -->
+        <div class="project">
+            <h3>Laser Tag System</h3>
+            <img src="images/laser-tag-project.png" alt="Laser Tag System Prototype" class="project-image">
+            <p>
+                This project aims to design and implement a laser tag game using four BBC micro:bits and two custom-designed, 3D-printed blasters. 
+                Each blaster contains two micro:bits: one acts as the "shooter" and the other as the "receiver." When Button A on the shooter micro:bit is pressed, 
+                it sends a radio signal to the opposing player's receiver micro:bit. Upon receiving the signal, the receiver micro:bit flashes red, indicating 
+                the player has been "tagged" or "out." 
+            </p>
+            <p>
+                The project emphasizes interactivity, seamless communication via micro:bit radio signals, and creative hardware integration. It explores a wide range of skills, 
+                including 3D modeling and printing for custom blaster design, micro:bit programming for both shooter and receiver functionalities, and wireless communication protocols to ensure real-time gameplay accuracy. 
+                This laser tag system demonstrates how simple electronic components, combined with ingenuity and hands-on engineering, can create an engaging and fully functional game.
+            </p>
+            <ul>
+                <li><strong>Technology Used:</strong> micro:bit microcontrollers, Python programming, ultrasonic sensors, and 3D printing.</li>
+                <li><strong>Features:</strong>
+                    <ul>
+                        <li>Interactive gameplay with sound and light feedback.</li>
+                        <li>Health tracking and scoring system displayed on micro:bit LEDs.</li>
+                        <li>Custom-designed 3D-printed blaster casings for ergonomic handling and durability.</li>
+                    </ul>
+                </li>
+                <li><strong>Challenges Overcome:</strong> Optimized communication protocols for reliable real-time interaction and implemented power management strategies for extended gameplay.</li>
+                <li><strong>Outcomes:</strong> Successfully created a fully functional prototype that provided an engaging and competitive gaming experience.</li>
+            </ul>
+            <p>
+                <a href="https://github.com/Goldfacee/Laser-Tag-Project-Code" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> View Project on GitHub
+                </a>
+            </p>
+        </div>
+    </section>
+    
