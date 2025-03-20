@@ -2,151 +2,162 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Projects">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #333;
+            background-color: #111;
             color: #fff;
+            line-height: 1.6;
         }
 
-        /* Navbar Styles */
         .navbar {
-            background-color: #222;
+            background-color: #3e2a47;
+            color: #fff;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: top 0.3s;
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .navbar a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            padding: 10px 15px;
-            transition: background-color 0.3s, color 0.3s;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            border-radius: 8px;
         }
 
         .navbar a:hover {
-            background-color: #444;
-            color: #0d6efd;
+            background-color: #774c8b;
+            transform: scale(1.05);
         }
 
-        /* Section Styles */
         #projects {
-            margin: 80px auto; /* Offset for fixed navbar */
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
+            padding: 120px 20px 40px;
+            text-align: center;
+            background-color: #2a1b34;
         }
 
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #9b4d96;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .project {
-            margin: 20px auto;
-            max-width: 800px;
+            background-color: #3e2a47;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             padding: 20px;
-            background-color: #444;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
         }
 
         .project h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            color: #d1c7d0;
             margin-bottom: 10px;
         }
 
         .project-image {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 10px auto;
             border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .project p {
+            font-size: 1rem;
+            color: #ddd;
         }
 
         .project-link {
+            display: inline-flex;
+            align-items: center;
             text-decoration: none;
-            color: #0d6efd;
+            color: #9b4d96;
             font-weight: bold;
-            display: inline-block;
             margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .project-link i {
+            margin-right: 8px;
         }
 
         .project-link:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        ul ul {
-            margin-left: 20px;
+            color: #d1c7d0;
         }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="resume.html">Resume</a>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="resume.html">Resume</a>
+        </div>
     </nav>
 
-    <!-- Projects Section -->
     <section id="projects">
         <h2 class="section-title">Projects</h2>
         
-        <!-- Laser Tag Project -->
-        <div class="project">
-            <h3>Laser Tag System</h3>
-            <img src="images/laser-tag-project.png" alt="Laser Tag System Prototype" class="project-image">
-            <p>
-                This project aims to design and implement a laser tag game using four BBC micro:bits and two custom-designed, 3D-printed blasters. 
-                Each blaster contains two micro:bits: one acts as the "shooter" and the other as the "receiver." When Button A on the shooter micro:bit is pressed, 
-                it sends a radio signal to the opposing player's receiver micro:bit. Upon receiving the signal, the receiver micro:bit flashes red, indicating 
-                the player has been "tagged" or "out." 
-            </p>
-            <p>
-                The project emphasizes interactivity, seamless communication via micro:bit radio signals, and creative hardware integration. It explores a wide range of skills, 
-                including 3D modeling and printing for custom blaster design, micro:bit programming for both shooter and receiver functionalities, and wireless communication protocols to ensure real-time gameplay accuracy. 
-                This laser tag system demonstrates how simple electronic components, combined with ingenuity and hands-on engineering, can create an engaging and fully functional game.
-            </p>
-            <ul>
-                <li><strong>Technology Used:</strong> micro:bit microcontrollers, Python programming, ultrasonic sensors, and 3D printing.</li>
-                <li><strong>Features:</strong>
-                    <ul>
-                        <li>Interactive gameplay with sound and light feedback.</li>
-                        <li>Health tracking and scoring system displayed on micro:bit LEDs.</li>
-                        <li>Custom-designed 3D-printed blaster casings for ergonomic handling and durability.</li>
-                    </ul>
-                </li>
-                <li><strong>Challenges Overcome:</strong> Optimized communication protocols for reliable real-time interaction and implemented power management strategies for extended gameplay.</li>
-                <li><strong>Outcomes:</strong> Successfully created a fully functional prototype that provided an engaging and competitive gaming experience.</li>
-            </ul>
-            <p>
+        <div class="projects-container">
+            <div class="project">
+                <h3>Laser Tag System</h3>
+                <img src="images/laser-tag-project.png" alt="Laser Tag System Prototype" class="project-image">
+                <p>
+                    An interactive game built using four BBC micro:bits and two custom 3D-printed blasters. Features include radio communication, real-time gameplay indicators, and health tracking.
+                </p>
                 <a href="https://github.com/Goldfacee/Laser-Tag-Project-Code" target="_blank" class="project-link">
                     <i class="fab fa-github"></i> View Project on GitHub
                 </a>
-            </p>
+            </div>
+
+            <div class="project">
+                <h3>Smart Home Automation System</h3>
+                <img src="images/smart-home-project.png" alt="Smart Home Automation System" class="project-image">
+                <p>
+                    Uses a BBC micro:bit with multiple sensors to monitor temperature, humidity, gas levels, and motion while enabling remote control of smart home devices.
+                </p>
+            </div>
         </div>
     </section>
-    
+</body>
+</html>
