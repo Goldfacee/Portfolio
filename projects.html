@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Projects">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #3e2a47;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: top 0.3s;
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+
+        .navbar a:hover {
+            background-color: #774c8b;
+            transform: scale(1.05);
+        }
+
+        #projects {
+            padding: 120px 20px 40px;
+            text-align: center;
+            background-color: #2a1b34;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #9b4d96;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .project {
+            background-color: #3e2a47;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            font-size: 1.8rem;
+            color: #d1c7d0;
+            margin-bottom: 10px;
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .project p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #9b4d96;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .project-link i {
+            margin-right: 8px;
+        }
+
+        .project-link:hover {
+            color: #d1c7d0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="resume.html">Resume</a>
+        </div>
+    </nav>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="projects-container">
+            <div class="project">
+                <h3>Laser Tag System</h3>
+                <img src="images/laser-tag-project.png" alt="Laser Tag System Prototype" class="project-image">
+                <p>
+                    An interactive game built using four BBC micro:bits and two custom 3D-printed blasters. Features include radio communication, real-time gameplay indicators, and health tracking.
+                </p>
+                <a href="https://github.com/Goldfacee/Laser-Tag-Project-Code" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> View Project on GitHub
+                </a>
+            </div>
+
+            <div class="project">
+                <h3>Smart Home Automation System</h3>
+                <img src="images/smart-home-project.png" alt="Smart Home Automation System" class="project-image">
+                <p>
+                    Uses a BBC micro:bit with multiple sensors to monitor temperature, humidity, gas levels, and motion while enabling remote control of smart home devices.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
