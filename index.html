@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <!-- Adding Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
         /* Custom CSS styles */
         body {
@@ -70,13 +71,34 @@
             display: flex;
         }
 
-        /* Home Section */
-        section {
-            padding: 100px 20px 20px;
-            text-align: center;
-            background-color: #2a1b34; /* Darker background for contrast */
-            color: #fff;
-            transition: all 0.3s ease;
+        /* Home Section with Golden Ratio */
+        #home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 20px;
+            text-align: left;
+        }
+
+        /* Image Styling */
+        .home-image {
+            flex-basis: 38.2%;
+            max-width: 38.2%;
+        }
+
+        .home-image img {
+            width: 80%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Text Styling */
+        .home-text {
+            flex-basis: 61.8%;
+            max-width: 61.8%;
         }
 
         .section-title {
@@ -85,34 +107,11 @@
             font-weight: 600;
             color: #9b4d96; /* Light purple */
             letter-spacing: 2px;
-            display: inline-block;
-            overflow: hidden;
-            border-right: 3px solid #fff; /* Adds a cursor effect */
-            white-space: nowrap;
-            width: 0;
-            animation: typing 2s steps(15) 0.5s forwards, blink 0.75s step-end 2s infinite;
         }
 
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 15ch; /* Adjust the width based on the length of your text */
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        .section p {
+        .home-text p {
             font-size: 1.2rem;
             line-height: 1.8;
-            max-width: 900px;
-            margin: 0 auto;
             color: #d1c7d0; /* Light grey text for readability */
         }
 
@@ -154,18 +153,13 @@
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .navbar ul {
+            #home {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
 
-            .navbar a {
-                padding: 12px;
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 100px 20px 20px;
+            .home-image, .home-text {
+                max-width: 100%;
             }
 
             .section-title {
@@ -176,7 +170,6 @@
                 font-size: 0.9rem;
             }
         }
-
     </style>
 </head>
 <body>
@@ -194,12 +187,17 @@
     
     <!-- Home Section -->
     <section id="home">
-        <h2 class="section-title">Welcome!</h2>
-        <p>
-            Hi I'm Tendai, an Electrical Engineering student at NJIT with a passion for robotics and aviation, focusing on control systems. Through my minor in Drones and Robotics, I combine technical expertise with hands-on innovation to create practical solutions. My goal is to engage real-world challenges, continually grow my knowledge, and push technological boundaries—all while having fun.
-        </p>
-        <p class="website-note">(Website under construction ^...^)</p>
-        <a href="https://www.linkedin.com/in/tendai-chimuka-2159a225b/" class="button" target="_blank">Visit my LinkedIn</a>
+        <div class="home-image">
+            <img src="selfie.webp" alt="Tendai Chimuka">
+        </div>
+        <div class="home-text">
+            <h2 class="section-title">Welcome!</h2>
+            <p>
+                Hi I'm Tendai, an Electrical Engineering student at NJIT with a passion for robotics and aviation, focusing on control systems. Through my minor in Drones and Robotics, I combine technical expertise with hands-on innovation to create practical solutions. My goal is to engage real-world challenges, continually grow my knowledge, and push technological boundaries—all while having fun.
+            </p>
+            <p class="website-note">(Website under construction ^...^)</p>
+            <a href="https://www.linkedin.com/in/tendai-chimuka-2159a225b/" class="button" target="_blank">Visit my LinkedIn</a>
+        </div>
     </section>
 
     <!-- Footer -->
