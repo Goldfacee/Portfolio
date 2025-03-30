@@ -83,16 +83,20 @@
             text-align: left;
         }
 
-        /* Image Styling */
+        /* Image Styling - Updated for circular crop */
         .home-image {
             flex-basis: 38.2%;
             max-width: 38.2%;
+            display: flex;
+            justify-content: center;
         }
 
         .home-image img {
             width: 80%;
             height: auto;
-            border-radius: 12px;
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover; /* Ensures the image fills the circle */
+            aspect-ratio: 1/1; /* Maintains perfect circle */
         }
 
         /* Text Styling */
@@ -108,6 +112,27 @@
             color: #9b4d96; /* Light purple */
             letter-spacing: 2px;
         }
+
+        /* Typing animation for Welcome */
+        .typing-animation {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #9b4d96; /* Cursor effect */
+    white-space: nowrap;
+    animation: typing 1.5s steps(10) forwards;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 8.5ch; } /* Increased width to fully fit "Welcome!" */
+}
+
+/* Cursor keeps blinking at the end */
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
 
         .home-text p {
             font-size: 1.2rem;
@@ -180,7 +205,7 @@
             <a href="#home" class="navbar-brand">Home</a>
             <ul class="navbar-nav">
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="resume.pdf" target="_blank">Resume</a></li>
+                <li><a href="resume.pdf" target="Tendai Chimuka's Resume.pdf">Resume</a></li>
             </ul>
         </div>
     </nav>
@@ -191,7 +216,7 @@
             <img src="selfie.webp" alt="Tendai Chimuka">
         </div>
         <div class="home-text">
-            <h2 class="section-title">Welcome!</h2>
+            <h2 class="section-title"><span class="typing-animation">Welcome!</span></h2>
             <p>
                 Hi I'm Tendai, an Electrical Engineering student at NJIT with a passion for robotics and aviation, focusing on control systems. Through my minor in Drones and Robotics, I combine technical expertise with hands-on innovation to create practical solutions. My goal is to engage real-world challenges, continually grow my knowledge, and push technological boundaries—all while having fun.
             </p>
@@ -207,4 +232,3 @@
 
 </body>
 </html>
-
