@@ -81,7 +81,7 @@
         }
 
         .project:hover {
-            max-height: 1000px;
+            max-height: 1200px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
@@ -101,7 +101,7 @@
 
         .project-content {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             padding: 0 20px 20px;
             opacity: 0;
             transition: opacity 0.3s ease 0.2s;
@@ -112,11 +112,11 @@
         }
 
         .project-image {
-            width: 200px;
-            height: 200px;
+            width: 280px; /* Increased from 200px */
+            height: 280px; /* Increased from 200px */
             object-fit: cover;
             border-radius: 8px;
-            margin-right: 20px;
+            margin-right: 30px; /* Increased from 20px */
             flex-shrink: 0;
             opacity: 0;
             transition: opacity 0.3s ease 0.3s;
@@ -161,7 +161,7 @@
             
             .project-image {
                 width: 100%;
-                height: auto;
+                height: 250px;
                 margin-right: 0;
                 margin-bottom: 20px;
             }
@@ -212,7 +212,7 @@
                         <p>
                             A smart home monitoring and control system built using a BBC micro:bit, programmed in MicroPython. The system integrates multiple sensors, including a temperature and humidity sensor (e.g., DHT11, DHT22), a gas sensor (MQ series), and a motion sensor (PIR sensor) to continuously track environmental conditions. The micro:bit processes sensor data and communicates wirelessly using radio signals or Bluetooth, enabling real-time monitoring and remote control of smart home devices. The system can trigger automated responses, such as activating a fan when temperature rises, sending alerts for gas leaks, or turning on lights when motion is detected.
                         </p>
-                        <a href="https://github.com/Goldfacee/Smart-home-code.git" target="_blank" class="project-link">
+                        <a href="https://github.com/Goldfacee/Smart-Home-Automation" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> View Project on GitHub
                         </a>
                     </div>
@@ -229,7 +229,7 @@
                         <p>
                             Sentinel Prime is a fire truck robotic system built around an Arduino Uno R3, programmed in C++ for motor control, servo actuation, and sensor integration. The system features an autonomous fire extinguishing mechanism with servos, a flame sensor, a recycled bottle as a water tank, and repurposed wood for the frame. It continuously scans for fires and automatically stops to spray water when one is detected, aiming to reduce human casualties in wildfires. The system uses SG90 servos for precise oscillation, a 4-channel relay for high-power DC motor control. Mounted on a remote control truck, the design combines power electronics, sensor feedback, and embedded control to enable autonomous firefighting.
                         </p>
-                        <a href="https://github.com/Goldfacee/Fire-Truck-Code/blob/main/code" target="_blank" class="project-link">
+                        <a href="https://github.com/Goldfacee/Sentinel-Prime-Fire-Truck" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> View Project on GitHub
                         </a>
                     </div>
