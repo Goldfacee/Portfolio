@@ -56,8 +56,8 @@
 
         #projects {
             padding: 120px 20px 40px;
-            text-align: center;
-            background-color: #2a1b34;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
@@ -67,44 +67,74 @@
             color: #9b4d96;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: auto;
+            text-align: center;
         }
 
         .project {
             background-color: #3e2a47;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            text-align: left;
-            transition: transform 0.3s ease-in-out;
+            margin-bottom: 30px;
+            overflow: hidden;
+            max-height: 60px;
+            transition: max-height 0.5s ease;
         }
 
         .project:hover {
-            transform: translateY(-5px);
+            max-height: 1000px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-header {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .project h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #d1c7d0;
-            margin-bottom: 10px;
+            margin: 0;
+        }
+
+        .project-content {
+            display: flex;
+            align-items: center;
+            padding: 0 20px 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease 0.2s;
+        }
+
+        .project:hover .project-content {
+            opacity: 1;
         }
 
         .project-image {
-            width: 100%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
             border-radius: 8px;
-            margin: 15px 0;
+            margin-right: 20px;
+            flex-shrink: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease 0.3s;
+        }
+
+        .project:hover .project-image {
+            opacity: 1;
+        }
+
+        .project-text {
+            flex: 1;
         }
 
         .project p {
             font-size: 1rem;
             color: #ddd;
+            margin: 0 0 15px 0;
+            line-height: 1.6;
         }
 
         .project-link {
@@ -113,7 +143,6 @@
             text-decoration: none;
             color: #9b4d96;
             font-weight: bold;
-            margin-top: 10px;
             transition: color 0.3s ease;
         }
 
@@ -123,6 +152,23 @@
 
         .project-link:hover {
             color: #d1c7d0;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                flex-direction: column;
+            }
+            
+            .project-image {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
@@ -140,36 +186,54 @@
         
         <div class="projects-container">
             <div class="project">
-                <h3>Laser Tag System</h3>
-                <img src="IMG_6734.jpg" alt="Laser Tag System Prototype" class="project-image">
-                <p>
-                    An interactive laser tag game built using four BBC micro:bits and two custom 3D-printed blasters, programmed in Python. The system utilizes radio communication for real-time data exchange between micro:bits, enabling hit detection, health tracking, and gameplay synchronization. Each blaster is equipped with a trigger mechanism, an infrared (IR) emitter for shooting signals, and an onboard micro:bit for processing and transmitting data. The receiving micro:bits, acting as player health trackers, use LED matrix displays to indicate remaining health and game status. Additional features include sound effects for hits and eliminations, enhancing the experience.
-                </p>
-                <a href="https://github.com/Goldfacee/Laser-Tag-Project-Code" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Project on GitHub
-                </a>
+                <div class="project-header">
+                    <h3>Laser Tag System</h3>
+                </div>
+                <div class="project-content">
+                    <img src="IMG_6734.jpg" alt="Laser Tag System Prototype" class="project-image">
+                    <div class="project-text">
+                        <p>
+                            An interactive laser tag game built using four BBC micro:bits and two custom 3D-printed blasters, programmed in Python. The system utilizes radio communication for real-time data exchange between micro:bits, enabling hit detection, health tracking, and gameplay synchronization. Each blaster is equipped with a trigger mechanism, an infrared (IR) emitter for shooting signals, and an onboard micro:bit for processing and transmitting data. The receiving micro:bits, acting as player health trackers, use LED matrix displays to indicate remaining health and game status. Additional features include sound effects for hits and eliminations, enhancing the experience.
+                        </p>
+                        <a href="https://github.com/Goldfacee/Laser-Tag-Project-Code" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View Project on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
-                <h3>Smart Home Automation System</h3>
-                <img src="IMG_6685.jpg" alt="Smart Home Automation System" class="project-image">
-                <p>
-                    A smart home monitoring and control system built using a BBC micro:bit, programmed in MicroPython. The system integrates multiple sensors, including a temperature and humidity sensor (e.g., DHT11, DHT22), a gas sensor (MQ series), and a motion sensor (PIR sensor) to continuously track environmental conditions. The micro:bit processes sensor data and communicates wirelessly using radio signals or Bluetooth, enabling real-time monitoring and remote control of smart home devices. The system can trigger automated responses, such as activating a fan when temperature rises, sending alerts for gas leaks, or turning on lights when motion is detected.
-                </p>
-                <a href="https://github.com/Goldfacee/Smart-Home-Automation" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Project on GitHub
-                </a>
+                <div class="project-header">
+                    <h3>Smart Home Automation System</h3>
+                </div>
+                <div class="project-content">
+                    <img src="IMG_6685.jpg" alt="Smart Home Automation System" class="project-image">
+                    <div class="project-text">
+                        <p>
+                            A smart home monitoring and control system built using a BBC micro:bit, programmed in MicroPython. The system integrates multiple sensors, including a temperature and humidity sensor (e.g., DHT11, DHT22), a gas sensor (MQ series), and a motion sensor (PIR sensor) to continuously track environmental conditions. The micro:bit processes sensor data and communicates wirelessly using radio signals or Bluetooth, enabling real-time monitoring and remote control of smart home devices. The system can trigger automated responses, such as activating a fan when temperature rises, sending alerts for gas leaks, or turning on lights when motion is detected.
+                        </p>
+                        <a href="https://github.com/Goldfacee/Smart-Home-Automation" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View Project on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
-                <h3>Sentinel Prime Fire Truck</h3>
-                <img src="IMG_7439 (2).jpg" alt="Sentinel Prime Fire Truck" class="project-image">
-                <p>
-                    Sentinel Prime is a fire truck robotic system built around an Arduino Uno R3, programmed in C++ for motor control, servo actuation, and sensor integration. The system features an autonomous fire extinguishing mechanism with servos, a flame sensor, a recycled bottle as a water tank, and repurposed wood for the frame. It continuously scans for fires and automatically stops to spray water when one is detected, aiming to reduce human casualties in wildfires. The system uses SG90 servos for precise oscillation, a 4-channel relay for high-power DC motor control. Mounted on a remote control truck, the design combines power electronics, sensor feedback, and embedded control to enable autonomous firefighting.
-                </p>
-                <a href="https://github.com/Goldfacee/Sentinel-Prime-Fire-Truck" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Project on GitHub
-                </a>
+                <div class="project-header">
+                    <h3>Sentinel Prime Fire Truck</h3>
+                </div>
+                <div class="project-content">
+                    <img src="IMG_7439 (2).jpg" alt="Sentinel Prime Fire Truck" class="project-image">
+                    <div class="project-text">
+                        <p>
+                            Sentinel Prime is a fire truck robotic system built around an Arduino Uno R3, programmed in C++ for motor control, servo actuation, and sensor integration. The system features an autonomous fire extinguishing mechanism with servos, a flame sensor, a recycled bottle as a water tank, and repurposed wood for the frame. It continuously scans for fires and automatically stops to spray water when one is detected, aiming to reduce human casualties in wildfires. The system uses SG90 servos for precise oscillation, a 4-channel relay for high-power DC motor control. Mounted on a remote control truck, the design combines power electronics, sensor feedback, and embedded control to enable autonomous firefighting.
+                        </p>
+                        <a href="https://github.com/Goldfacee/Sentinel-Prime-Fire-Truck" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View Project on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
