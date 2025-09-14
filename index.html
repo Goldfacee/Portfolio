@@ -371,13 +371,149 @@
             </a>
         </div>
     </section>
+        <!-- About Me Section -->
+ <section id="about">
+    <div class="container about-container">
+        <div class="about-text">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                So outside of school I am one of the coolest people ever — at least by my own standard lol. 
+                I was born and raised in Zimbabwe and I’m bilingual (English and Shona, and yes, I do most of my 
+                deep life thinking in English). Unlike most engineers, I actually enjoy running, lifting weights, 
+                cooking (I make a mean steak), more running, and basically any physical activity — except doing 
+                the dishes. I’m also a huge fan of video games. My top 3 of all time? GTA V, Call of Duty, and No Man’s Sky — a solid mix of chaos, strategy, 
+                and pretending I’m an astronaut. Food-wise, I’m a die-hard Chipotle and Wingstop connoisseur, 
+                and I firmly believe banana milkshakes are the peak of human innovation. But that’s a lil bit about me.
+            </p>
+        </div>
 
+        <!-- Rotating Grid -->
+        <div class="about-grid">
+            <div class="grid-rotation">
+                <img src="lifting.jpg" alt="Pic 1">
+                <img src="kbbq.jpg" alt="Pic 2">
+                <img src="thrifting.jpg" alt="Pic 3">
+                <img src="florida.jpg" alt="Pic 4">
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Tendai Chimuka. All rights reserved.</p>
-    </footer>
+<style>
+    /* About Section */
+    /* About Section */
+#about {
+    margin: 60px auto;
+    padding: 60px 40px;
+    background: linear-gradient(145deg, var(--light-slate), var(--navy));
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
 
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
 
-</body>
-</html>
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Rotating Grid */
+.about-grid {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 550px;
+    height: 550px;
+}
+
+.grid-rotation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    animation: spin 25s linear infinite; /* This rotates the entire grid */
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-rotation img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid transparent;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    animation: counter-spin 25s linear infinite; /* This counter-rotates the images */
+}
+
+/* Hover / Active Effect */
+.grid-rotation img:hover,
+.grid-rotation img:active {
+    transform: scale(1.1) rotate(0deg); /* Reset rotation on hover if it applies */
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.7);
+    z-index: 10;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes counter-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); } /* Rotate in the opposite direction */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-grid {
+        width: 400px;
+        height: 400px;
+        margin-top: 40px;
+    }
+    .grid-rotation img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-grid {
+        width: 300px;
+        height: 300px;
+    }
+    .grid-rotation img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
