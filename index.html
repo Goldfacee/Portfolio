@@ -4,516 +4,665 @@
     <meta charset="UTF-8">
     <meta name="description" content="Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="portfolio, resume, career">
+    <meta name="keywords" content="portfolio, resume, career, electrical engineering, robotics, aviation, research">
     <title>Tendai Chimuka | Portfolio</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-   
+
     <style>
-        /* Updated Color Palette - Navy Blue and Darker Tones */
         :root {
-            --navy: #0a192f;        /* Deep navy blue */
-            --slate: #1e3a5f;       /* Medium slate blue */
-            --light-slate: #2d4a76; /* Lighter slate blue */
-            --accent: #64ffda;      /* Bright teal accent */
-            --text: #ccd6f6;        /* Light blue text */
-            --text-light: #8892b0;  /* Lighter text for secondary content */
+            --navy: #0a192f;
+            --slate: #112240;
+            --light-slate: #1d3557;
+            --card: #13294b;
+            --accent: #64ffda;
+            --text: #ccd6f6;
+            --text-light: #8892b0;
+            --border: rgba(100, 255, 218, 0.12);
+            --shadow: 0 10px 30px rgba(2, 12, 27, 0.35);
         }
 
-
-        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--navy);
+            background: linear-gradient(180deg, #08111f 0%, #0a192f 100%);
             color: var(--text);
-            line-height: 1.6;
-            padding-top: 80px;
+            line-height: 1.7;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
         .container {
-            max-width: 1200px;
+            max-width: 1180px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-
-        /* Navigation */
         .navbar {
-            background-color: rgba(10, 25, 47, 0.95);
-            color: var(--text);
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            background: rgba(10, 25, 47, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
 
         .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 16px 20px;
+            gap: 16px;
         }
 
-
         .navbar-brand {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--accent);
             text-decoration: none;
+            letter-spacing: 0.2px;
         }
-
 
         .navbar-nav {
             display: flex;
+            align-items: center;
+            gap: 10px;
             list-style: none;
+            flex-wrap: wrap;
         }
-
 
         .navbar-nav a {
             color: var(--text);
             text-decoration: none;
-            padding: 8px 16px;
+            padding: 10px 16px;
+            border-radius: 999px;
             font-weight: 500;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-            margin: 0 5px;
+            transition: 0.25s ease;
         }
-
 
         .navbar-nav a:hover {
             color: var(--accent);
-            background-color: rgba(100, 255, 218, 0.1);
+            background: rgba(100, 255, 218, 0.08);
         }
 
-
-        /* Home Section */
-        #home {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-            padding: 60px 40px;
-            background: linear-gradient(145deg, var(--slate), var(--navy));
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-            margin: 40px auto;
-            max-width: 1200px;
-            border: 1px solid rgba(100, 255, 218, 0.1);
+        section {
+            padding: 88px 0 24px;
         }
-
-
-        .home-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-
-        .home-image img {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 50%;
-            object-fit: cover;
-            aspect-ratio: 1/1;
-            border: 3px solid var(--accent);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-
-        .home-image img:hover {
-            transform: scale(1.03);
-        }
-
-
-        .home-text {
-            flex: 1.2;
-        }
-
 
         .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 18px;
             font-weight: 700;
             color: var(--text);
             position: relative;
             display: inline-block;
+            letter-spacing: -0.5px;
         }
-
 
         .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
+            content: "";
+            display: block;
+            width: 64px;
             height: 4px;
+            margin-top: 10px;
+            border-radius: 999px;
             background: var(--accent);
-            border-radius: 2px;
         }
 
+        .eyebrow {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        #home .container {
+            background: linear-gradient(180deg, rgba(19, 41, 75, 0.95), rgba(10, 25, 47, 0.98));
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 48px;
+        }
+
+        .home-content {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .home-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .home-image img {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .home-text {
+            max-width: 720px;
+        }
+
+        .home-text h1 {
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            line-height: 1.05;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+        }
 
         .typing-animation {
             display: inline-block;
             overflow: hidden;
             border-right: 3px solid var(--accent);
             white-space: nowrap;
-            animation: typing 1.5s steps(10) forwards, blink-caret 0.8s step-end infinite 1.5s;
+            animation: typing 1.6s steps(12) forwards, blink-caret 0.8s step-end infinite 1.6s;
         }
-
 
         @keyframes typing {
             from { width: 0; }
             to { width: 8.5ch; }
         }
 
-
         @keyframes blink-caret {
             50% { border-color: transparent; }
         }
 
-
         .home-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
             color: var(--text-light);
-            margin-bottom: 25px;
+            margin-bottom: 16px;
         }
-
 
         .website-note {
-            font-size: 1rem;
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 22px;
+            padding-left: 14px;
+            border-left: 3px solid var(--accent);
             color: var(--text-light);
             font-style: italic;
-            margin: 20px 0;
-            border-left: 3px solid var(--accent);
-            padding-left: 15px;
         }
 
+        .hero-actions,
+        .research-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
 
-        /* Button */
         .button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: transparent;
             color: var(--accent);
-            padding: 12px 30px;
-            font-size: 1.1rem;
+            padding: 12px 22px;
+            font-size: 1rem;
             font-weight: 500;
-            border-radius: 4px;
+            border-radius: 999px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: 0.25s ease;
             border: 1px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
         }
-
-
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(100, 255, 218, 0.1);
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-
 
         .button:hover {
-            color: var(--navy);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
-        }
-
-
-        .button:hover::before {
-            left: 0;
             background: var(--accent);
+            color: var(--navy);
+            transform: translateY(-2px);
         }
 
+        .button.secondary {
+            border-color: rgba(255,255,255,0.12);
+            color: var(--text);
+        }
 
-        /* Footer */
-        footer {
-            background-color: rgba(10, 25, 47, 0.95);
-            padding: 25px 20px;
+        .button.secondary:hover {
+            background: rgba(255,255,255,0.08);
+            color: var(--text);
+        }
+
+        #about .container {
+            background: linear-gradient(180deg, rgba(17, 34, 64, 0.96), rgba(10, 25, 47, 0.98));
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 42px;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.03rem;
             color: var(--text-light);
-            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .highlight-pill {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(100, 255, 218, 0.08);
+            border: 1px solid rgba(100, 255, 218, 0.14);
+            color: var(--text);
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .about-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid rgba(100, 255, 218, 0.12);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .about-grid img:hover {
+            transform: translateY(-4px);
+            border-color: rgba(100, 255, 218, 0.3);
+        }
+
+        #research .container {
+            background: linear-gradient(180deg, rgba(19, 41, 75, 0.96), rgba(10, 25, 47, 0.98));
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 42px;
+        }
+
+        .research-intro {
+            max-width: 780px;
+            margin-bottom: 28px;
+        }
+
+        .research-intro p {
+            color: var(--text-light);
             font-size: 1rem;
+            margin-top: 14px;
+        }
+
+        .research-card {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: start;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(100, 255, 218, 0.12);
+            border-radius: 20px;
+            padding: 26px;
+        }
+
+        .research-text h3 {
+            font-size: 1.45rem;
+            line-height: 1.35;
+            margin: 0 0 12px;
+            color: var(--text);
+        }
+
+        .research-text p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 0.98rem;
+        }
+
+        .future-work {
+            margin-top: 18px;
+            padding: 16px 18px;
+            border-left: 3px solid var(--accent);
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+        }
+
+        .future-work h4 {
+            color: var(--accent);
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .future-work p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .research-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .research-main-image {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid rgba(100, 255, 218, 0.12);
+            background: rgba(255, 255, 255, 0.02);
+            overflow: hidden;
+        }
+
+        .research-main-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .research-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .research-gallery-item {
+            border-radius: 16px;
+            border: 1px solid rgba(100, 255, 218, 0.12);
+            background: rgba(255, 255, 255, 0.02);
+            overflow: hidden;
+            min-height: 180px;
+            position: relative;
+        }
+
+        .research-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .research-gallery-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 10px;
+            font-size: 0.85rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        footer {
             margin-top: 60px;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 25, 47, 0.94);
             border-top: 1px solid rgba(100, 255, 218, 0.1);
+            padding: 24px 20px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
+        @media (max-width: 900px) {
+            .home-content,
+            .about-container,
+            .research-card {
+                grid-template-columns: 1fr;
+            }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            #home {
-                gap: 40px;
+            .home-text,
+            .about-text {
+                max-width: 100%;
             }
-           
-            .home-image img {
-                max-width: 300px;
-            }
-           
-            .section-title {
-                font-size: 2.5rem;
-            }
-        }
 
+            .home-image {
+                order: -1;
+            }
 
-        @media (max-width: 768px) {
-            #home {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 20px;
-            }
-           
-            .section-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-           
-            .home-image, .home-text {
-                width: 100%;
-            }
-           
             .home-image img {
                 max-width: 280px;
-                margin-bottom: 30px;
-            }
-           
-            .section-title {
-                font-size: 2.2rem;
-            }
-           
-            .navbar .container {
-                flex-direction: column;
-            }
-           
-            .navbar-brand {
-                margin-bottom: 10px;
-            }
-           
-            body {
-                padding-top: 120px;
             }
         }
 
-
-        @media (max-width: 480px) {
-            .navbar-nav {
+        @media (max-width: 768px) {
+            .navbar .container {
                 flex-direction: column;
-                align-items: center;
+                justify-content: center;
             }
-           
-            .navbar-nav a {
-                margin: 5px 0;
+
+            #home .container,
+            #about .container,
+            #research .container {
+                padding: 28px;
             }
-           
-            .section-title {
-                font-size: 2rem;
+
+            .home-content {
+                gap: 30px;
             }
-           
-            .home-text p {
-                font-size: 1rem;
+
+            .about-grid,
+            .research-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-grid img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .navbar-nav {
+                justify-content: center;
+            }
+
+            .home-text h1 {
+                font-size: 2.3rem;
+            }
+
+            .about-grid,
+            .research-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid img {
+                height: auto;
+                max-height: 260px;
+            }
+
+            .hero-actions,
+            .research-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .button {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
 
-
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="#home" class="navbar-brand">Tendai Chimuka</a>
             <ul class="navbar-nav">
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="https://docs.google.com/document/d/1jbMMEHAnz9Iqwqb-2bDLz8trlfxhIyhbz6qYABqT4v0/edit?tab=t.0" target="_blank">Resume</a></li>
-               
             </ul>
         </div>
     </nav>
-   
-    <!-- Home Section -->
-    <section id="home">
-        <div class="home-image">
-            <img src="21-_MG_0433.jpg" alt="Tendai Chimuka">
-        </div>
-        <div class="home-text">
-            <h2 class="section-title"><span class="typing-animation">Welcome!</span></h2>
-            <p>
-                Hi I'm Tendai, an Electrical Engineering student at NJIT with a passion for robotics and aviation, focusing on control systems. Through my minor in Drones and Robotics, I combine technical expertise with hands-on innovation to create practical solutions.
-            </p>
-            <p>
-                My goal is to engage real-world challenges, continually grow my knowledge, and push technological boundaries—all while having fun.
-            </p>
-            <p class="website-note">(Website under construction ^...^)</p>
-            <a href="https://www.linkedin.com/in/tendai-chimuka-2159a225b/" class="button" target="_blank">
-                <i class="fab fa-linkedin"></i> Visit my LinkedIn
-            </a>
-        </div>
-    </section>
-        <!-- About Me Section -->
- <section id="about">
-    <div class="container about-container">
-        <div class="about-text">
-            <h2 class="section-title">About Me</h2>
-            <p>
-                So outside of school I am one of the coolest people ever — at least by my own standard lol. 
-                I was born and raised in Zimbabwe and I’m bilingual (English and Shona, and yes, I do most of my 
-                deep life thinking in English). Unlike most engineers, I actually enjoy running, lifting weights, 
-                cooking (I make a mean steak), more running, and basically any physical activity — except doing 
-                the dishes. I’m also a huge fan of video games. My top 3 of all time? GTA V, Call of Duty, and No Man’s Sky — a solid mix of chaos, strategy, 
-                and pretending I’m an astronaut. Food-wise, I’m a die-hard Chipotle and Wingstop connoisseur, 
-                and I firmly believe banana milkshakes are the peak of human innovation. But that’s a lil bit about me.
-            </p>
-        </div>
 
-        <!-- Rotating Grid -->
-        <div class="about-grid">
-            <div class="grid-rotation">
-                <img src="lifting.jpg" alt="Pic 1">
-                <img src="kbbq.jpg" alt="Pic 2">
-                <img src="thrifting.JPG " alt="Pic 3">
-                <img src="florida.jpg" alt="Pic 4">
+    <section id="home">
+        <div class="container">
+            <div class="home-content">
+                <div class="home-image">
+                    <img src="21-_MG_0433.jpg" alt="Tendai Chimuka">
+                </div>
+
+                <div class="home-text">
+                    <div class="eyebrow">Electrical Engineering • NJIT • Drones & Robotics</div>
+                    <h1><span class="typing-animation">Welcome!</span></h1>
+                    <p>
+                        Hi, I’m Tendai — an Electrical Engineering student at NJIT with a strong interest in robotics, aviation, control systems, and power-focused design. Through my minor in Drones and Robotics, I enjoy combining technical theory with hands-on building to create practical engineering solutions.
+                    </p>
+                    <p>
+                        I’m especially interested in embedded systems, intelligent hardware, and real-world applications that sit at the intersection of electronics, motion, and autonomy.
+                    </p>
+                    <p class="website-note">(Website under construction ^...^)</p>
+
+                    <div class="hero-actions">
+                        <a href="https://www.linkedin.com/in/tendai-chimuka-2159a225b/" class="button" target="_blank">
+                            <i class="fab fa-linkedin"></i> Visit my LinkedIn
+                        </a>
+                        <a href="projects.html" class="button secondary">
+                            <i class="fas fa-folder-open"></i> View My Projects
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    /* About Section */
-    /* About Section */
-#about {
-    margin: 60px auto;
-    padding: 60px 40px;
-    background: linear-gradient(145deg, var(--light-slate), var(--navy));
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(100, 255, 218, 0.1);
-}
+    <section id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                        Outside of engineering, I like to keep life active and balanced. I was born and raised in Zimbabwe, and I’m bilingual in English and Shona. A lot of who I am comes from that background — it shapes the way I think, work, and connect with people.
+                    </p>
+                    <p>
+                        I enjoy running, lifting, cooking, and pretty much any physical activity except doing the dishes. I’m also a huge fan of video games, especially GTA V, Call of Duty, No Man’s Sky, and Microsoft Flight Simulator. On the food side, I take Chipotle and Wingstop very seriously, and I still think banana milkshakes are one of humanity’s best inventions.
+                    </p>
+                    <p>
+                        I like building things, learning fast, and bringing energy into whatever environment I’m in — whether that’s a lab, a team project, or just everyday life.
+                    </p>
 
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
+                    <div class="about-highlights">
+                        <span class="highlight-pill">Born in Zimbabwe</span>
+                        <span class="highlight-pill">English & Shona</span>
+                        <span class="highlight-pill">Robotics & Aviation</span>
+                        <span class="highlight-pill">Running & Lifting</span>
+                        <span class="highlight-pill">Flight Sim Fan</span>
+                    </div>
+                </div>
 
-.about-text {
-    flex: 1;
-}
+                <div class="about-grid">
+                    <img src="lifting.jpg" alt="Lifting">
+                    <img src="kbbq.jpg" alt="Food and lifestyle">
+                    <img src="thrifting.JPG" alt="Thrifting">
+                    <img src="florida.jpg" alt="Travel and experiences">
+                </div>
+            </div>
+        </div>
+    </section>
 
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-light);
-}
+    <section id="research">
+        <div class="container">
+            <div class="research-intro">
+                <div class="eyebrow">Research</div>
+                <h2 class="section-title">Research</h2>
+                <p>
+                    I’m interested in autonomy, energy-aware systems, and intelligent path planning for aerial robotics. This section highlights one of the research projects I contributed to in drone navigation and efficient flight.
+                </p>
+            </div>
 
-/* Rotating Grid */
-.about-grid {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 550px;
-    height: 550px;
-}
+            <div class="research-card">
+                <div class="research-text">
+                    <h3>EcoFlight: Low-Energy Path Finding Through Obstacles for Autonomous Sensing Drones</h3>
 
-.grid-rotation {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    animation: spin 25s linear infinite; /* This rotates the entire grid */
-    width: 100%;
-    height: 100%;
-    justify-items: center;
-    align-items: center;
-}
+                    <p>
+                        This paper presents EcoFlight, an energy-aware path planning approach for autonomous drones operating in 3D environments with obstacles. Instead of optimizing only for shortest distance, the method accounts for energy-related flight costs to help identify more efficient routes.
+                    </p>
 
-.grid-rotation img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 4px solid transparent;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    animation: counter-spin 25s linear infinite; /* This counter-rotates the images */
-}
+                    <p>
+                        The project reflects my broader interest in aviation, autonomous systems, and practical engineering strategies for improving UAV performance in realistic environments.
+                    </p>
 
-/* Hover / Active Effect */
-.grid-rotation img:hover,
-.grid-rotation img:active {
-    transform: scale(1.1) rotate(0deg); /* Reset rotation on hover if it applies */
-    border-color: var(--accent);
-    box-shadow: 0 0 30px rgba(100, 255, 218, 0.7);
-    z-index: 10;
-}
+                    <p>
+                        <strong>Authors:</strong> Jordan Leyva, Nahim J. Moran Vera, Yihan Xu, Adrien Durasno, Christopher U. Romero, Tendai Chimuka, Gabriel O. Huezo Ramirez, Ziqian Dong, and Roberto Rojas-Cessa
+                    </p>
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+                    <div class="future-work">
+                        <h4>Current / Future Work</h4>
+                        <p>
+                            This research paper is currently based on simulation results. Our ongoing goal is to extend this work into a real-world system by designing and building an autonomous drone platform capable of implementing the EcoFlight algorithm. By integrating the path-planning algorithm into an onboard flight controller, we aim to evaluate how energy-aware navigation performs in real flight conditions compared to traditional path-planning methods.
+                        </p>
+                    </div>
 
-@keyframes counter-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); } /* Rotate in the opposite direction */
-}
+                    <div class="research-actions">
+                        <a href="drone_paper.pdf" target="_blank" class="button">
+                            <i class="fas fa-file-pdf"></i> Read Paper
+                        </a>
+                        <a href="projects.html" class="button secondary">
+                            <i class="fas fa-diagram-project"></i> View More Work
+                        </a>
+                    </div>
+                </div>
 
-/* Responsive */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .about-grid {
-        width: 400px;
-        height: 400px;
-        margin-top: 40px;
-    }
-    .grid-rotation img {
-        width: 180px;
-        height: 180px;
-    }
-}
+                <div class="research-visual">
+                    <div class="research-main-image">
+                        <img src="ecoflight-main.png" alt="EcoFlight paper preview">
+                    </div>
 
-@media (max-width: 480px) {
-    .about-grid {
-        width: 300px;
-        height: 300px;
-    }
-    .grid-rotation img {
-        width: 140px;
-        height: 140px;
-    }
-}
+                    <div class="research-gallery">
+                        <div class="research-gallery-item">
+                            <img src="ecoflight-1.png" alt="EcoFlight algorithm or path model">
+                            <div class="research-gallery-caption">Algorithm / Path Model</div>
+                        </div>
 
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
+                        <div class="research-gallery-item">
+                            <img src="ecoflight-2.png" alt="EcoFlight simulation results">
+                            <div class="research-gallery-caption">Simulation Results</div>
+                        </div>
+
+                        <div class="research-gallery-item">
+                            <img src="ecoflight-3.png" alt="3D obstacle environment">
+                            <div class="research-gallery-caption">3D Obstacle Environment</div>
+                        </div>
+
+                        <div class="research-gallery-item">
+                            <img src="ecoflight-4.png" alt="Drone testing or research visual">
+                            <div class="research-gallery-caption">Testing / Team / UAV Visual</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Tendai Chimuka. Built with curiosity, iteration, and a lot of late-night debugging.</p>
+    </footer>
+
+</body>
+</html>
