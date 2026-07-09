@@ -36,6 +36,9 @@
             background: linear-gradient(180deg, #08111f 0%, #0a192f 100%);
             color: var(--text);
             line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         img {
@@ -263,6 +266,26 @@
             min-height: 100%;
         }
 
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 26px 20px;
+            color: var(--text-light);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(6, 17, 31, 0.38);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .footer-content p {
+            margin: 0;
+        }
+
         @media (max-width: 900px) {
             .project-content,
             .academic-project-content {
@@ -304,6 +327,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container">
@@ -325,6 +349,32 @@
             </p>
 
             <div class="projects-container">
+
+                <div class="project">
+                    <div class="project-header">
+                        <h3>High Power PDB</h3>
+                    </div>
+                    <div class="academic-project-content">
+                        <div class="academic-media-container">
+                            <div class="academic-media-grid">
+                                <div class="academic-media-item">
+                                    <img src="pdbB.png" alt="High Power PDB circuit design">
+                                    <div class="academic-media-caption">Circuit Design</div>
+                                </div>
+                                <div class="academic-media-item">
+                                    <img src="pdbS.png" alt="High Power PDB board layout">
+                                    <div class="academic-media-caption">PCB Layout</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="academic-text">
+                            <p>
+                                This project focused on developing a high-power power distribution board for general testing. The design involved PCB layout, component placement, power routing, and integration of control electronics for reliable current delivery. It strengthened my understanding of practical power electronics design, board-level integration, and the tradeoffs involved in routing higher-current paths while keeping the layout organized and manufacturable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project">
                     <div class="project-header">
                         <h3>Sentinel Prime Fire Truck</h3>
@@ -375,6 +425,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -387,30 +438,6 @@
             </p>
 
             <div class="projects-container">
-                <div class="project">
-                    <div class="project-header">
-                        <h3>High Power PDB</h3>
-                    </div>
-                    <div class="academic-project-content">
-                        <div class="academic-media-container">
-                            <div class="academic-media-grid">
-                                <div class="academic-media-item">
-                                    <img src="pdbB.png" alt="High Power PDB circuit design">
-                                    <div class="academic-media-caption">Circuit Design</div>
-                                </div>
-                                <div class="academic-media-item">
-                                    <img src="pdbS.png" alt="High Power PDB board layout">
-                                    <div class="academic-media-caption">PCB Layout</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="academic-text">
-                            <p>
-                                This project focused on developing a high-power power distribution board for general testing. The design involved PCB layout, component placement, power routing, and integration of control electronics for reliable current delivery. It strengthened my understanding of practical power electronics design, board-level integration, and the tradeoffs involved in routing higher-current paths while keeping the layout organized and manufacturable.
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="project">
                     <div class="project-header">
@@ -486,8 +513,16 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Tendai Chimuka. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
