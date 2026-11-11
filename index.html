@@ -1,593 +1,1711 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="portfolio, resume, career, electrical engineering, robotics, aviation, research">
-    <title>Tendai Chimuka | Portfolio</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --navy: #0a192f;
-            --slate: #112240;
-            --light-slate: #1d3557;
-            --card: #13294b;
-            --accent: #64ffda;
-            --text: #ccd6f6;
-            --text-light: #8892b0;
-            --border: rgba(100, 255, 218, 0.12);
-            --shadow: 0 10px 30px rgba(2, 12, 27, 0.35);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(180deg, #08111f 0%, #0a192f 100%);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10, 25, 47, 0.88);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 20px;
-            gap: 16px;
-        }
-
-        .navbar-brand {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-decoration: none;
-            letter-spacing: 0.2px;
-        }
-
-        .navbar-nav {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .navbar-nav a {
-            color: var(--text);
-            text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 500;
-            transition: 0.25s ease;
-        }
-
-        .navbar-nav a:hover {
-            color: var(--accent);
-            background: rgba(100, 255, 218, 0.08);
-        }
-
-        section {
-            padding: 88px 0 24px;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-bottom: 18px;
-            font-weight: 700;
-            color: var(--text);
-            position: relative;
-            display: inline-block;
-            letter-spacing: -0.5px;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 64px;
-            height: 4px;
-            margin-top: 10px;
-            border-radius: 999px;
-            background: var(--accent);
-        }
-
-        .eyebrow {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        #home .container {
-            background: linear-gradient(180deg, rgba(19, 41, 75, 0.95), rgba(10, 25, 47, 0.98));
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            padding: 48px;
-        }
-
-        .home-content {
-            display: grid;
-            grid-template-columns: 340px 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-
-        .home-image {
-            display: flex;
-            justify-content: center;
-        }
-
-        .home-image img {
-            width: 100%;
-            max-width: 320px;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-        }
-
-        .home-text {
-            max-width: 720px;
-        }
-
-        .home-text h1 {
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
-            line-height: 1.05;
-            margin-bottom: 18px;
-            letter-spacing: -1px;
-        }
-
-        .typing-animation {
-            display: inline-block;
-            overflow: hidden;
-            border-right: 3px solid var(--accent);
-            white-space: nowrap;
-            animation: typing 1.6s steps(12) forwards, blink-caret 0.8s step-end infinite 1.6s;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 8.5ch; }
-        }
-
-        @keyframes blink-caret {
-            50% { border-color: transparent; }
-        }
-
-        .home-text p {
-            font-size: 1.05rem;
-            color: var(--text-light);
-            margin-bottom: 16px;
-        }
-
-        .website-note {
-            display: inline-block;
-            margin-top: 10px;
-            margin-bottom: 22px;
-            padding-left: 14px;
-            border-left: 3px solid var(--accent);
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        .hero-actions,
-        .research-actions {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: transparent;
-            color: var(--accent);
-            padding: 12px 22px;
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 999px;
-            text-decoration: none;
-            transition: 0.25s ease;
-            border: 1px solid var(--accent);
-        }
-
-        .button:hover {
-            background: var(--accent);
-            color: var(--navy);
-            transform: translateY(-2px);
-        }
-
-        .button.secondary {
-            border-color: rgba(255,255,255,0.12);
-            color: var(--text);
-        }
-
-        .button.secondary:hover {
-            background: rgba(255,255,255,0.08);
-            color: var(--text);
-        }
-
-        #about .container {
-            background: linear-gradient(180deg, rgba(17, 34, 64, 0.96), rgba(10, 25, 47, 0.98));
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            padding: 42px;
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 36px;
-            align-items: center;
-        }
-
-        .about-text p {
-            font-size: 1.03rem;
-            color: var(--text-light);
-            margin-bottom: 16px;
-        }
-
-        .about-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 22px;
-        }
-
-        .highlight-pill {
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(100, 255, 218, 0.08);
-            border: 1px solid rgba(100, 255, 218, 0.14);
-            color: var(--text);
-            font-size: 0.92rem;
-            font-weight: 500;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .about-grid img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 18px;
-            border: 1px solid rgba(100, 255, 218, 0.12);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-
-        .about-grid img:hover {
-            transform: translateY(-4px);
-            border-color: rgba(100, 255, 218, 0.3);
-        }
-
-        #research .container {
-            background: linear-gradient(180deg, rgba(19, 41, 75, 0.96), rgba(10, 25, 47, 0.98));
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            padding: 42px;
-        }
-
-        .research-intro {
-            max-width: 780px;
-            margin-bottom: 28px;
-        }
-
-        .research-intro p {
-            color: var(--text-light);
-            font-size: 1rem;
-            margin-top: 14px;
-        }
-
-        .research-card {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 28px;
-            align-items: start;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(100, 255, 218, 0.12);
-            border-radius: 20px;
-            padding: 26px;
-        }
-
-        .research-text h3 {
-            font-size: 1.45rem;
-            line-height: 1.35;
-            margin: 0 0 12px;
-            color: var(--text);
-        }
-
-        .research-text p {
-            color: var(--text-light);
-            margin-bottom: 16px;
-            font-size: 0.98rem;
-        }
-
-        .future-work {
-            margin-top: 18px;
-            padding: 16px 18px;
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.02);
-            border-radius: 8px;
-        }
-
-        .future-work h4 {
-            color: var(--accent);
-            margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .future-work p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        .research-visual {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .research-main-image {
-            width: 100%;
-            border-radius: 16px;
-            border: 1px solid rgba(100, 255, 218, 0.12);
-            background: rgba(255, 255, 255, 0.02);
-            overflow: hidden;
-        }
-
-        .research-main-image img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .research-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        .research-gallery-item {
-            border-radius: 16px;
-            border: 1px solid rgba(100, 255, 218, 0.12);
-            background: rgba(255, 255, 255, 0.02);
-            overflow: hidden;
-            min-height: 180px;
-            position: relative;
-        }
-
-        .research-gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .research-gallery-caption {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 10px;
-            font-size: 0.85rem;
-            color: white;
-            background: rgba(0, 0, 0, 0.6);
-            text-align: center;
-        }
-
-        footer {
-            margin-top: 60px;
-            background: rgba(10, 25, 47, 0.94);
-            border-top: 1px solid rgba(100, 255, 218, 0.1);
-            padding: 24px 20px;
-            text-align: center;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 900px) {
-            .home-content,
-            .about-container,
-            .research-card {
-                grid-template-columns: 1fr;
-            }
-
-            .home-text,
-            .about-text {
-                max-width: 100%;
-            }
-
-            .home-image {
-                order: -1;
-            }
-
-            .home-image img {
-                max-width: 280px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar .container {
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            #home .container,
-            #about .container,
-            #research .container {
-                padding: 28px;
-            }
-
-            .home-content {
-                gap: 30px;
-            }
-
-            .about-grid,
-            .research-gallery {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .about-grid img {
-                height: 180px;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .navbar-nav {
-                justify-content: center;
-            }
-
-            .home-text h1 {
-                font-size: 2.3rem;
-            }
-
-            .about-grid,
-            .research-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .about-grid img {
-                height: auto;
-                max-height: 260px;
-            }
-
-            .hero-actions,
-            .research-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .button {
-                justify-content: center;
-            }
-        }
-    </style>
+<!-- Google tag (visitor analytics). Pasted exactly as Google provides it. -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TBFQW937"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tendai Chimuka | Electrical Engineer</title>
+<meta name="description" content="Tendai Chimuka is an electrical engineering student at NJIT working on RF front ends, power electronics, PCB design and robotics research.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tendai Chimuka | Electrical Engineer">
+<meta property="og:description" content="RF, power electronics and PCB design projects, plus research in three NJIT labs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Cpath d='M8 34h10l5-16 8 30 7-22 4 8h14' fill='none' stroke='%23a78bfa' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Saira+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ------------------------------------------------------------------
+   Tokens
+------------------------------------------------------------------ */
+:root {
+    --black: #000000;
+    --panel: #0f0f11;
+    --raised: #17171b;
+    --rule: #25252b;
+    --rule-strong: #3b3b46;
+    --mute: #8e8e99;
+    --soft: #bdbdc8;
+    --text: #f1f1f5;
+    --violet: #a78bfa;
+    --violet-strong: #7c3aed;
+    --violet-deep: #241845;
+    --violet-pale: #ddd2ff;
+
+    --f-display: "Saira Semi Condensed", "Arial Narrow", Arial, sans-serif;
+    --f-body: "Albert Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+    --max: 1120px;
+    --gutter: 24px;
+    --header-h: 60px;
+}
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
+body {
+    margin: 0;
+    background: var(--black);
+    color: var(--text);
+    font-family: var(--f-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, p, dl, dd, ul, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--violet-strong); color: #fff; }
+
+.wrap { width: min(var(--max), 100% - 2 * var(--gutter)); margin-inline: auto; }
+.mono { font-family: var(--f-mono); font-size: 0.875rem; }
+.skip {
+    position: absolute; left: 12px; top: -60px; z-index: 100;
+    background: var(--violet); color: #000; padding: 8px 14px; font-weight: 600;
+}
+.skip:focus { top: 12px; }
+
+/* ------------------------------------------------------------------
+   Header
+------------------------------------------------------------------ */
+.bar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(0, 0, 0, 0.86);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+}
+.bar-inner {
+    display: flex; align-items: center; gap: 20px;
+    height: var(--header-h);
+}
+.mark {
+    font-family: var(--f-display); font-weight: 700; font-size: 1.125rem;
+    text-decoration: none; white-space: nowrap; letter-spacing: 0.01em;
+}
+.bar nav { margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+.bar nav::-webkit-scrollbar { display: none; }
+.bar nav ul { display: flex; gap: 4px; }
+.bar nav a {
+    display: block; padding: 8px 12px; white-space: nowrap;
+    color: var(--soft); text-decoration: none; font-size: 0.9375rem;
+    border-bottom: 2px solid transparent;
+}
+.bar nav a:hover { color: var(--text); }
+.bar nav a[aria-current="true"] { color: var(--violet-pale); border-bottom-color: var(--violet); }
+.progress {
+    position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%;
+    background: var(--violet); transform-origin: 0 50%; transform: scaleX(0);
+}
+
+/* ------------------------------------------------------------------
+   Buttons and tags
+------------------------------------------------------------------ */
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border: 1px solid var(--rule-strong);
+    background: transparent; color: var(--text);
+    font-weight: 500; font-size: 0.9375rem; text-decoration: none;
+    cursor: pointer; transition: background-color .15s, border-color .15s, color .15s;
+}
+.btn:hover { border-color: var(--violet); color: var(--violet-pale); }
+.btn.primary { background: var(--violet); border-color: var(--violet); color: #000; font-weight: 600; }
+.btn.primary:hover { background: var(--violet-pale); border-color: var(--violet-pale); color: #000; }
+.btn.small { padding: 7px 14px; font-size: 0.875rem; }
+.textlink { color: var(--violet); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.textlink:hover { color: var(--violet-pale); }
+
+.tag {
+    display: inline-block; padding: 2px 9px; border: 1px solid var(--rule-strong);
+    color: var(--soft); font-size: 0.8125rem; white-space: nowrap;
+}
+.tag.wip { border-color: var(--violet-strong); color: var(--violet-pale); background: var(--violet-deep); }
+
+/* ------------------------------------------------------------------
+   Hero
+------------------------------------------------------------------ */
+.hero { padding: 72px 0 80px; border-bottom: 1px solid var(--rule); }
+.hero-grid { display: grid; gap: 48px; align-items: center; }
+.hero .kicker { color: var(--mute); font-size: 0.9375rem; margin-bottom: 14px; }
+.hero h1 {
+    font-family: var(--f-display); font-weight: 700;
+    font-size: clamp(3rem, 9vw, 5.25rem); line-height: 0.95; letter-spacing: -0.015em;
+}
+.hero .lede { margin-top: 24px; font-size: 1.1875rem; line-height: 1.55; color: var(--soft); max-width: 34em; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 28px; }
+.facts {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px;
+    margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule);
+}
+.facts dt { color: var(--mute); font-size: 0.8125rem; }
+.facts dd { font-weight: 500; }
+
+/* Doppler instrument */
+.scope { border: 1px solid var(--rule); background: var(--panel); }
+.scope-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    padding: 12px 16px; border-bottom: 1px solid var(--rule);
+}
+.scope-head strong { font-family: var(--f-display); font-weight: 600; font-size: 1.0625rem; }
+.scope-head span { color: var(--mute); font-size: 0.8125rem; }
+.scope canvas { display: block; width: 100%; aspect-ratio: 16 / 10; touch-action: pan-y; cursor: crosshair; }
+.readout { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule); }
+.readout div { padding: 12px 16px; }
+.readout div + div { border-left: 1px solid var(--rule); }
+.readout dt { color: var(--mute); font-size: 0.8125rem; }
+.readout dd { font-family: var(--f-mono); font-size: 1.0625rem; color: var(--violet-pale); white-space: nowrap; }
+.scope-note { padding: 10px 16px 12px; border-top: 1px solid var(--rule); color: var(--mute); font-size: 0.8125rem; line-height: 1.5; }
+
+/* ------------------------------------------------------------------
+   Sections
+------------------------------------------------------------------ */
+.section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 28px; }
+.sec-head h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.05; }
+.sec-head p { color: var(--mute); max-width: 36em; }
+
+/* ------------------------------------------------------------------
+   Projects
+------------------------------------------------------------------ */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.chip {
+    padding: 6px 14px; border: 1px solid var(--rule-strong); background: transparent;
+    color: var(--soft); font-size: 0.875rem; cursor: pointer;
+}
+.chip:hover { border-color: var(--violet); color: var(--text); }
+.chip[aria-pressed="true"] { background: var(--violet); border-color: var(--violet); color: #000; font-weight: 600; }
+.count { margin-left: auto; align-self: center; color: var(--mute); font-size: 0.8125rem; }
+
+.register { border-top: 1px solid var(--rule-strong); }
+.proj { border-bottom: 1px solid var(--rule); }
+.proj[hidden] { display: none; }
+.proj > summary {
+    display: grid; grid-template-columns: 1fr; gap: 4px 16px; align-items: center;
+    padding: 16px 44px 16px 12px; cursor: pointer; list-style: none; position: relative;
+}
+.proj > summary::-webkit-details-marker { display: none; }
+.proj > summary:hover { background: var(--panel); }
+.proj > summary::after {
+    content: ""; position: absolute; right: 16px; top: 50%; width: 9px; height: 9px;
+    border-right: 2px solid var(--mute); border-bottom: 2px solid var(--mute);
+    transform: translateY(-70%) rotate(45deg); transition: transform .2s;
+}
+.proj[open] > summary::after { transform: translateY(-30%) rotate(-135deg); border-color: var(--violet); }
+.proj[open] > summary { background: var(--panel); }
+.p-name { font-family: var(--f-display); font-weight: 600; font-size: 1.25rem; line-height: 1.25; }
+.p-focus { color: var(--mute); font-size: 0.9375rem; }
+.p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 6px; }
+.p-when { color: var(--soft); font-family: var(--f-mono); font-size: 0.8125rem; white-space: nowrap; }
+
+.sheet { padding: 8px 12px 36px; background: var(--panel); }
+.tools { color: var(--violet-pale); font-size: 0.9375rem; margin-bottom: 20px; }
+.sheet-grid { display: grid; gap: 28px; }
+.specs { border-top: 1px solid var(--rule); align-self: start; }
+.specs div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.specs dt { color: var(--mute); font-size: 0.875rem; }
+.specs dd { font-family: var(--f-mono); font-size: 0.875rem; line-height: 1.5; }
+.desc { max-width: 66ch; }
+.desc p + p { margin-top: 14px; }
+.desc ul { margin-top: 14px; }
+.desc ul + p { margin-top: 16px; }
+.desc li { position: relative; padding-left: 18px; color: var(--soft); }
+.desc li + li { margin-top: 8px; }
+.desc li strong { color: var(--text); font-weight: 600; }
+.desc li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 1px; background: var(--violet); }
+.sheet-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+
+.chain { margin-top: 28px; }
+.chain-label { color: var(--mute); font-size: 0.8125rem; margin-bottom: 10px; }
+.chain ol { display: flex; flex-wrap: wrap; gap: 10px 0; margin: 0; padding: 0; list-style: none; }
+.chain li { display: flex; align-items: center; font-family: var(--f-mono); font-size: 0.8125rem; }
+.chain li span { padding: 7px 11px; border: 1px solid var(--rule-strong); background: var(--raised); }
+.chain li.hot span { border-color: var(--violet-strong); color: var(--violet-pale); background: var(--violet-deep); }
+.chain li + li::before { content: ""; width: 22px; height: 1px; background: var(--violet); margin-right: 0; position: relative; }
+.chain li + li span { position: relative; }
+.chain li + li span::before {
+    content: ""; position: absolute; left: -6px; top: 50%; width: 6px; height: 6px;
+    border-top: 1px solid var(--violet); border-right: 1px solid var(--violet);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-top: 28px; }
+.gallery figure { border: 1px solid var(--rule); background: var(--black); }
+.gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #08080a; }
+.gallery figcaption { padding: 8px 12px; color: var(--mute); font-size: 0.8125rem; border-top: 1px solid var(--rule); }
+
+
+/* Bench demo tabs */
+.scope-tabs { display: flex; border-bottom: 1px solid var(--rule); }
+.tab {
+    flex: 1; padding: 10px 8px; border: 0; border-right: 1px solid var(--rule); background: transparent;
+    color: var(--mute); font-size: 0.875rem; cursor: pointer;
+}
+.tab:last-child { border-right: 0; }
+.tab:hover { color: var(--text); }
+.tab[aria-pressed="true"] { color: var(--violet-pale); background: var(--violet-deep); box-shadow: inset 0 -2px 0 var(--violet); }
+
+/* Resume menu */
+.resume-menu { position: relative; }
+.resume-menu ul {
+    position: absolute; right: 0; top: calc(100% + 8px); min-width: 15rem; z-index: 60;
+    background: var(--raised); border: 1px solid var(--rule-strong);
+}
+.resume-menu ul[hidden] { display: none; }
+.resume-menu li a { display: block; padding: 10px 14px; text-decoration: none; font-size: 0.9375rem; color: var(--soft); }
+.resume-menu li + li a { border-top: 1px solid var(--rule); }
+.resume-menu li a:hover { background: var(--violet-deep); color: var(--violet-pale); }
+
+.chip.ghost { border-style: dashed; }
+
+/* Small project animations */
+.viz { border: 1px solid var(--rule); background: #08080a; margin-bottom: 18px; }
+.viz svg { display: block; width: 100%; height: auto; }
+.viz figcaption { padding: 7px 12px; border-top: 1px solid var(--rule); color: var(--mute); font-size: 0.8125rem; }
+.v-line { fill: none; stroke: #3b3b46; stroke-width: 1.5; }
+.v-box { fill: #17171b; stroke: #3b3b46; stroke-width: 1.5; }
+.v-hot { fill: none; stroke: #a78bfa; stroke-width: 2; stroke-linecap: round; }
+.v-hotbox { fill: #241845; stroke: #a78bfa; stroke-width: 1.5; }
+.v-fill { fill: #a78bfa; }
+.v-dim2 { fill: #5b4a99; }
+.v-t { fill: #8e8e99; font: 10px var(--f-mono); }
+.dash { stroke-dasharray: 4 6; }
+
+.ping { vector-effect: non-scaling-stroke; animation: ping 2.4s linear infinite; opacity: 0; }
+.ping.d2 { animation-delay: 0.8s; }
+.ping.d3 { animation-delay: 1.6s; }
+@keyframes ping { 0% { transform: scale(0.6); opacity: 0.95; } 100% { transform: scale(10); opacity: 0; } }
+.tgt { animation: tgt 4.8s ease-in-out infinite alternate; }
+@keyframes tgt { from { transform: translateX(-70px); } to { transform: translateX(30px); } }
+.echo { animation: blink 2.4s linear infinite; }
+@keyframes blink { 0%, 60% { opacity: 0.15; } 75% { opacity: 1; stroke: #a78bfa; } 100% { opacity: 0.15; } }
+
+.cell { transform-box: fill-box; transform-origin: 50% 100%; }
+.cell.c1 { transform: scaleY(0.66); }
+.cell.c3 { transform: scaleY(0.68); }
+.cell.c2 { animation: drain 5s ease-in-out infinite; }
+.cell.c4 { animation: fill 5s ease-in-out infinite; }
+@keyframes drain { 0%, 10% { transform: scaleY(0.96); } 80%, 100% { transform: scaleY(0.68); } }
+@keyframes fill { 0%, 10% { transform: scaleY(0.38); } 80%, 100% { transform: scaleY(0.66); } }
+.packet { animation: packet 1.25s linear infinite; }
+@keyframes packet { 0% { transform: translateX(0); opacity: 0; } 15%, 85% { opacity: 1; } 100% { transform: translateX(152px); opacity: 0; } }
+
+.rotor { animation: tilt 6s ease-in-out infinite; }
+@keyframes tilt { 0%, 30% { transform: rotate(0deg); } 50%, 80% { transform: rotate(-90deg); } 100% { transform: rotate(0deg); } }
+.ph1 { animation: ph1 6s linear infinite; }
+.ph2 { animation: ph2 6s linear infinite; }
+@keyframes ph1 { 0%, 38% { opacity: 1; } 42%, 92% { opacity: 0; } 96%, 100% { opacity: 1; } }
+@keyframes ph2 { 0%, 38% { opacity: 0; } 42%, 92% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+.pulse { animation: pulse 2.2s linear infinite; }
+@keyframes pulse { 0% { transform: translate(0, 0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)); opacity: 0; } }
+
+.runner { stroke-dasharray: 16 84; animation: runner 2.6s linear infinite; }
+@keyframes runner { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+
+.flow { stroke-dasharray: 5 9; animation: flow 1.4s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -28; } }
+.cube { transform-box: fill-box; transform-origin: 50% 50%; animation: spin 14s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.rocket { offset-path: path("M24 104 Q180 -62 336 104"); animation: fly 5s ease-in-out infinite; }
+@keyframes fly { 0% { offset-distance: 0%; opacity: 0; } 8%, 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+
+.wing { transform-box: fill-box; transform-origin: 50% 50%; animation: rock 4s ease-in-out infinite alternate; }
+@keyframes rock { from { transform: rotate(-5deg) translateY(-2px); } to { transform: rotate(5deg) translateY(3px); } }
+
+.ramp { animation: ramp 3.6s linear infinite; }
+@keyframes ramp { 0% { transform: translate(0, 0); } 78%, 100% { transform: translate(126px, -66px); } }
+.led { opacity: 0.14; animation: led 3.6s linear infinite; }
+@keyframes led { 0%, 12% { opacity: 0.14; } 16%, 70% { opacity: 1; } 80%, 100% { opacity: 0.14; } }
+
+.v-echo { fill: none; stroke: #ddd2ff; stroke-width: 1.5; stroke-linecap: round; }
+.v-prop { fill: #a78bfa; opacity: 0.55; }
+.back { vector-effect: non-scaling-stroke; animation: back 2.4s linear infinite; opacity: 0; }
+.back.d2 { animation-delay: 1.2s; }
+@keyframes back { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(8); opacity: 0; } }
+.pusher { animation: pusher 6s linear infinite; }
+@keyframes pusher { 0%, 36% { opacity: 0.12; } 46%, 86% { opacity: 0.9; } 96%, 100% { opacity: 0.12; } }
+.air { animation: air 6s linear infinite; }
+@keyframes air { 0%, 40% { opacity: 0; stroke-dashoffset: 0; } 50% { opacity: 1; } 84% { opacity: 1; stroke-dashoffset: -60; } 92%, 100% { opacity: 0; stroke-dashoffset: -60; } }
+.rx { animation: rx 0.55s ease-in-out infinite alternate; }
+@keyframes rx { from { fill: #241845; } to { fill: #4a3594; } }
+.eject { animation: eject 9s ease-out infinite; }
+@keyframes eject { 0%, 6% { transform: translateX(-176px); } 30%, 100% { transform: translateX(0); } }
+.tumble { transform-box: fill-box; transform-origin: 50% 50%; animation: tumble 9s ease-out infinite; }
+@keyframes tumble { 0%, 6% { transform: rotate(0deg); } 30% { transform: rotate(250deg); } 62% { transform: rotate(372deg); } 72% { transform: rotate(356deg); } 80%, 100% { transform: rotate(360deg); } }
+.boom { animation: boom 9s ease-out infinite; }
+@keyframes boom { 0%, 30% { transform: scaleX(0); } 40%, 100% { transform: scaleX(1); } }
+.elev { opacity: 0.35; animation: elev 4s ease-in-out infinite alternate; }
+.elev.e2 { animation-direction: alternate-reverse; }
+@keyframes elev { from { opacity: 0.25; } to { opacity: 1; } }
+
+/* ------------------------------------------------------------------
+   Research and experience
+------------------------------------------------------------------ */
+.roles { border-top: 1px solid var(--rule-strong); }
+.role { display: grid; gap: 8px 32px; padding: 28px 0; border-bottom: 1px solid var(--rule); }
+.role-when { color: var(--soft); font-family: var(--f-mono); font-size: 0.8125rem; padding-top: 6px; }
+.role h3 { font-family: var(--f-display); font-weight: 600; font-size: 1.375rem; line-height: 1.25; }
+.role .org { color: var(--violet-pale); margin-top: 2px; }
+.role .desc { margin-top: 12px; }
+.role .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+
+/* ------------------------------------------------------------------
+   Skills
+------------------------------------------------------------------ */
+.skills { display: grid; gap: 0; border-top: 1px solid var(--rule-strong); }
+.skills > div { display: grid; grid-template-columns: 1fr; gap: 6px 32px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.skills h3 { font-family: var(--f-display); font-weight: 600; font-size: 1.125rem; }
+.skills p { color: var(--soft); }
+
+/* ------------------------------------------------------------------
+   About
+------------------------------------------------------------------ */
+.about-grid { display: grid; gap: 40px; align-items: start; }
+.about-copy p { color: var(--soft); max-width: 62ch; }
+.about-copy p + p { margin-top: 16px; }
+.portrait { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+.portrait img { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 1px solid var(--rule-strong); }
+.portrait strong { font-family: var(--f-display); font-weight: 600; font-size: 1.25rem; display: block; line-height: 1.2; }
+.portrait span { color: var(--mute); font-size: 0.9375rem; }
+.photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.photos img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid var(--rule); filter: saturate(0.85); transition: filter .2s; }
+.photos img:hover { filter: none; }
+
+/* ------------------------------------------------------------------
+   Contact
+------------------------------------------------------------------ */
+.contact { padding: 80px 0 56px; }
+.contact h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.25rem, 7vw, 4rem); line-height: 1; }
+.contact > .wrap > p { margin-top: 16px; color: var(--soft); max-width: 38em; }
+.contact-rows { margin-top: 32px; border-top: 1px solid var(--rule-strong); }
+.contact-row {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px;
+    padding: 16px 0; border-bottom: 1px solid var(--rule);
+}
+.contact-row[hidden] { display: none; }
+.contact-row dt { color: var(--mute); font-size: 0.875rem; min-width: 6rem; }
+.contact-row dd { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-left: auto; }
+.contact-row .mono { font-size: 0.9375rem; word-break: break-all; }
+.foot { margin-top: 48px; color: var(--mute); font-size: 0.875rem; }
+
+/* ------------------------------------------------------------------
+   Lightbox
+------------------------------------------------------------------ */
+.lightbox { border: 1px solid var(--rule-strong); background: var(--panel); color: var(--text); padding: 0; max-width: min(1100px, 94vw); }
+.lightbox::backdrop { background: rgba(0, 0, 0, 0.88); }
+.lightbox img { max-height: 80vh; width: auto; max-width: 100%; margin: 0 auto; background: #08080a; }
+.lightbox-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 10px 14px; border-top: 1px solid var(--rule); }
+.lightbox-bar p { color: var(--soft); font-size: 0.875rem; }
+
+/* ------------------------------------------------------------------
+   Wider screens
+------------------------------------------------------------------ */
+@media (min-width: 720px) {
+    .proj > summary { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) auto; padding-left: 16px; }
+    .p-focus { grid-column: 2; }
+    .p-meta { grid-column: 3; margin-top: 0; flex-wrap: nowrap; }
+    .sheet { padding: 12px 16px 40px; }
+    .role { grid-template-columns: 11rem 1fr; }
+    .skills > div { grid-template-columns: 11rem 1fr; }
+}
+@media (min-width: 940px) {
+    .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 56px; }
+    .sheet-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; }
+    .about-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 56px; }
+}
+@media (max-width: 719px) {
+    :root { --header-h: 96px; }
+    .bar-inner { flex-wrap: wrap; height: auto; padding-top: 10px; gap: 2px 16px; }
+    .bar-inner > .resume-menu { margin-left: auto; }
+    .bar nav { order: 3; width: 100%; margin-left: -7px; }
+    .bar nav ul { gap: 0; }
+    .bar nav a { padding: 8px 7px; font-size: 0.8125rem; }
+}
+@media (max-width: 520px) {
+    :root { --gutter: 18px; }
+    .hero { padding: 48px 0 56px; }
+    .section { padding: 56px 0; }
+    .readout dd { font-size: 0.9375rem; }
+    .readout div { padding: 10px 12px; }
+    .specs div { grid-template-columns: 7rem 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+    .viz * { animation: none !important; }
+    .ping, .back { opacity: 0.6; }
+    .boom { transform: scaleX(1); }
+    .led { opacity: 1; }
+}
+</style>
 </head>
+
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="#home" class="navbar-brand">Tendai Chimuka</a>
-            <ul class="navbar-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Projects/projects.html">Projects</a></li>
-            <li><a href="Research/research.html">Research</a></li>
-            <li><a href="Resume/resume.html">Resume</a></li>
+<header class="bar">
+    <div class="wrap bar-inner">
+        <a class="mark" href="#top">Tendai Chimuka</a>
+        <nav aria-label="Sections">
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+        </nav>
+        <div class="resume-menu">
+            <a class="btn small" id="resume-btn" href="Resume/Tendai_Chimuka_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <ul id="resume-list" hidden></ul>
         </div>
-    </nav>
+    </div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
 
-    <section id="home">
-        <div class="container">
-            <div class="home-content">
-                <div class="home-image">
-                    <img src="21-_MG_0433.jpg" alt="Tendai Chimuka">
-                </div>
+<main id="main">
 
-                <div class="home-text">
-                    <div class="eyebrow">Electrical Engineering • NJIT </div>
-                    <h1><span class="typing-animation">Welcome!</span></h1>
-                    <p>
-                        Hi Im Tendai, I am an Electrical Engineering student at NJIT specializing in RF (Photonics & Opto-electronics), electronics, and control systems. Driven by a passion for aviation, robotics, and high-speed communications, I am eager to apply my academic foundation to real-world engineering challenges in these industries.                    </p>
-                    <p>
-                        Currently, I work as a research assistant across two distinct laboratories, an experience that has fueled my deep appreciation for research and development (R&D) and methodical problem-solving.                    </p>
-                    <p class="website-note">(Website under construction ^...^)</p>
+<!-- ================================================================
+     HERO
+================================================================ -->
+<section class="hero" id="top">
+    <div class="wrap hero-grid">
+        <div>
+            <p class="kicker">Electrical engineering at NJIT, class of 2027</p>
+            <h1>Tendai Chimuka</h1>
+            <p class="lede">
+                I like learning about and making cool things, mostly centered on electronics: power
+                electronics, optoelectronics and high-speed electronics. This page collects the hardware
+                I've designed, simulated, built and flown.
+            </p>
+            <div class="hero-actions">
+                <a class="btn primary" href="#projects">See the projects</a>
+                <a class="btn" href="#resumes" id="hero-resume">Open resume (PDF)</a>
+                <a class="textlink" href="https://www.linkedin.com/in/tendai-chimuka-2159a225b/" target="_blank" rel="noopener" data-track="contact_click" data-label="linkedin">LinkedIn</a>
+                <a class="textlink" href="https://github.com/Goldfacee" target="_blank" rel="noopener" data-track="contact_click" data-label="github">GitHub</a>
+            </div>
+            <dl class="facts">
+                <div><dt>Focus</dt><dd>Power, optoelectronics, high-speed electronics</dd></div>
+                <div><dt>Now</dt><dd>Research assistant, Swissler Innovative Robotics Lab</dd></div>
+                <div><dt>Team</dt><dd>Electrical team manager, NJIT RockSat</dd></div>
+                <div><dt>Degree</dt><dd>B.S. Electrical Engineering, May 2027</dd></div>
+            </dl>
+        </div>
 
-                    <div class="hero-actions">
-                        <a href="https://www.linkedin.com/in/tendai-chimuka-2159a225b/" class="button" target="_blank">
-                            <i class="fab fa-linkedin"></i> Visit my LinkedIn
-                        </a>
-                        <a href="projects.html" class="button secondary">
-                            <i class="fas fa-folder-open"></i> View My Projects
-                        </a>
+        <figure class="scope" aria-labelledby="scope-title">
+            <div class="scope-tabs" role="group" aria-label="Choose a bench demo">
+                <button class="tab" type="button" data-mode="rf" aria-pressed="true">High-speed</button>
+                <button class="tab" type="button" data-mode="power" aria-pressed="false">Power</button>
+                <button class="tab" type="button" data-mode="opto" aria-pressed="false">Optical</button>
+            </div>
+            <div class="scope-head">
+                <strong id="scope-title">Doppler radar, 5.8 GHz</strong>
+                <span id="scope-hint">Sweep your pointer across the screen</span>
+            </div>
+            <canvas id="scope" role="img" aria-label="Animated waveforms that respond to the pointer"></canvas>
+            <dl class="readout">
+                <div><dt id="l-0">Target speed</dt><dd id="r-0">0.0 m/s</dd></div>
+                <div><dt id="l-1">Doppler shift</dt><dd id="r-1">0 Hz</dd></div>
+                <div><dt id="l-2">Direction</dt><dd id="r-2">No target</dd></div>
+            </dl>
+            <figcaption class="scope-note" id="scope-note">
+                A model of the IQ output from the radar I'm building, not measured data. At 5.8 GHz a target
+                shifts the return by 38.7 Hz for every m/s, and the sign of the shift gives its direction.
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- ================================================================
+     PROJECTS
+================================================================ -->
+<section class="section" id="projects">
+    <div class="wrap">
+        <div class="sec-head">
+            <h2>Projects</h2>
+            <p>Current work first. Select a row to open its spec sheet.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter projects by area">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="rf" aria-pressed="false">RF and photonics</button>
+            <button class="chip" type="button" data-filter="power" aria-pressed="false">Power</button>
+            <button class="chip" type="button" data-filter="aero" aria-pressed="false">Aerospace</button>
+            <button class="chip" type="button" data-filter="analog" aria-pressed="false">Analog</button>
+            <button class="chip ghost" type="button" id="toggle-all">Open all</button>
+            <span class="count" id="count" aria-live="polite"></span>
+        </div>
+
+        <div class="register">
+
+            <details class="proj" id="radar" data-cat="rf" open>
+                <summary>
+                    <span class="p-name">5.8 GHz Doppler Radar with PCB Antennas</span>
+                    <span class="p-focus">RF front end, patch antennas</span>
+                    <span class="p-meta"><span class="p-when">Sep 2026 to now</span><span class="tag wip">In progress</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">openEMS, COMSOL, KiCad</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Type</dt><dd>CW Doppler, IQ output</dd></div>
+                            <div><dt>Band</dt><dd>5.8 GHz ISM</dd></div>
+                            <div><dt>Substrate</dt><dd>Rogers RO4350B</dd></div>
+                            <div><dt>Antennas</dt><dd>2 inset-fed patches, TX and RX</dd></div>
+                            <div><dt>Resonance</dt><dd>5.79 GHz openEMS, 5.78 GHz COMSOL</dd></div>
+                            <div><dt>Bandwidth</dt><dd>~80 MHz at -10 dB</dd></div>
+                            <div><dt>Gain</dt><dd>6.9 dBi, simulated</dd></div>
+                            <div><dt>Isolation</dt><dd>-34 dB at 40 mm spacing, simulated</dd></div>
+                            <div><dt>Output</dt><dd>+5.6 dBm EIRP, no power amplifier</dd></div>
+                            <div><dt>Sensitivity</dt><dd>38.7 Hz per m/s</dd></div>
+                            <div><dt>Status</dt><dd>Antenna simulation done, schematic in progress</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><rect class="v-box" x="18" y="24" width="10" height="24"/><rect class="v-box" x="18" y="62" width="10" height="24"/><text class="v-t" x="34" y="20">TX patch</text><text class="v-t" x="34" y="100">RX patch</text><path class="v-line dash" d="M28 36 H276 M28 74 H276"/><path class="v-hot ping" style="transform-origin:28px 36px" d="M36 26 A12 12 0 0 1 36 46"/><path class="v-hot ping d2" style="transform-origin:28px 36px" d="M36 26 A12 12 0 0 1 36 46"/><path class="v-hot ping d3" style="transform-origin:28px 36px" d="M36 26 A12 12 0 0 1 36 46"/><g class="tgt"><circle class="v-fill" cx="296" cy="55" r="8"/><path class="v-echo back" style="transform-origin:296px 74px" d="M288 64 A12 12 0 0 0 288 84"/><path class="v-echo back d2" style="transform-origin:296px 74px" d="M288 64 A12 12 0 0 0 288 84"/></g><text class="v-t" x="262" y="100">moving target</text></svg>
+                                <figcaption>Transmit, reflect, receive: the echo comes back shifted in frequency</figcaption>
+                            </figure>
+                                                        <p>
+                                A continuous-wave Doppler radar built from discrete RF parts instead of a radar
+                                module, so every stage of the front end is my own design. It measures both the
+                                speed and the direction of a moving target.
+                            </p>
+                            <ul>
+                                <li>Designed the transmit and receive patch antennas and simulated them in two different solvers, a time-domain one and a finite-element one. Their resonant frequencies agree within 10 MHz.</li>
+                                <li>Chose a low-loss Rogers substrate over FR4, because the spread in FR4's dielectric constant could move the resonance by more than 100 MHz.</li>
+                                <li>Picked 5.8 GHz over higher bands to keep the Doppler signal below 5 kHz, which an ordinary microcontroller can sample and run an FFT on.</li>
+                                <li>Planned the level budget so the radar stays within FCC Part 15 limits without a power amplifier.</li>
+                            </ul>
+                            <p>Next: fabricate the antenna board, measure it on a network analyzer and tune the oscillator to the measured resonance.</p>
+                        </div>
+                    </div>
+                    <div class="chain">
+                        <p class="chain-label">Signal path</p>
+                        <ol>
+                            <li><span>VCO HMC431</span></li>
+                            <li><span>Wilkinson splitter</span></li>
+                            <li><span>TX patch</span></li>
+                            <li class="hot"><span>Target</span></li>
+                            <li><span>RX patch</span></li>
+                            <li><span>LNA PMA3-83LN+</span></li>
+                            <li><span>IQ demod ADL5380</span></li>
+                            <li><span>Baseband filter</span></li>
+                            <li><span>MCU FFT</span></li>
+                        </ol>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </details>
 
-    <section id="about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-text">
-                    <h2 class="section-title">About Me</h2>
-                    <p>
-                        Outside of engineering, I like to keep life active and balanced. I was born and raised in Zimbabwe, and I’m bilingual in English and Shona. A lot of who I am comes from that background — it shapes the way I think, work, and connect with people.
-                    </p>
-                    <p>
-                        I enjoy running, lifting, cooking, and pretty much any physical activity except doing the dishes. I’m also a huge fan of video games, especially GTA V, Call of Duty, No Man’s Sky, and Microsoft Flight Simulator. On the food side, I take Chipotle and Wingstop very seriously, and I still think banana milkshakes are one of humanity’s best inventions.
-                    </p>
-                    <p>
-                        I like building things, learning fast, and bringing energy into whatever environment I’m in — whether that’s a lab, a team project, or just everyday life.
-                    </p>
-
-                    <div class="about-highlights">
-                        <span class="highlight-pill">Born in Zimbabwe</span>
-                        <span class="highlight-pill">English & Shona</span>
-                        <span class="highlight-pill">Robotics & Aviation</span>
-                        <span class="highlight-pill">Running & Lifting</span>
-                        <span class="highlight-pill">Flight Sim Fan</span>
+            <details class="proj" id="cubesat" data-cat="aero">
+                <summary>
+                    <span class="p-name">NASA RockSat Stella II: CUBE Flight Computer</span>
+                    <span class="p-focus">Flight computer PCB, electrical team manager</span>
+                    <span class="p-meta"><span class="p-when">Fall 2026 to now</span><span class="tag wip">In progress</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">NJIT RockSat, Teensy 4.1</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Mission</dt><dd>Stella II, NASA sounding rocket</dd></div>
+                            <div><dt>Payload</dt><dd>HUB ejects CUBE, a free-flying cube</dd></div>
+                            <div><dt>My part</dt><dd>CUBE flight computer board</dd></div>
+                            <div><dt>Processor</dt><dd>Teensy 4.1, 600 MHz, microSD flight log</dd></div>
+                            <div><dt>Motion</dt><dd>ISM330DHCX 6-axis IMU</dd></div>
+                            <div><dt>High-g</dt><dd>ADXL375 accelerometer, ±200 g</dd></div>
+                            <div><dt>Magnetometer</dt><dd>RM3100 on a deployable boom, SPI</dd></div>
+                            <div><dt>Radio</dt><dd>XBee 3, 2.4 GHz, to HUB</dd></div>
+                            <div><dt>Power</dt><dd>5 V in, TLV75533 3.3 V LDO</dd></div>
+                            <div><dt>Boom supply</dt><dd>TPS2553 switch, ~300 mA limit</dd></div>
+                            <div><dt>Target</dt><dd>10 nT resolution, ±0.01 rad/s when aligned</dd></div>
+                            <div><dt>Status</dt><dd>Preliminary design review, Nov 2026</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><path class="v-line flow" d="M10 22 Q180 -4 350 22"/><path class="v-line flow" d="M10 55 Q180 32 350 55"/><path class="v-line flow" d="M10 90 Q180 70 350 90"/><rect class="v-box" x="14" y="30" width="46" height="50"/><text class="v-t" x="24" y="96">HUB</text><g class="eject"><g class="tumble"><path class="v-hot boom" style="transform-origin:216px 55px" d="M198 55 H152"/><path class="v-hot boom" style="transform-origin:216px 55px" d="M234 55 H280"/><rect class="v-hotbox" x="198" y="37" width="36" height="36"/><circle class="v-line" cx="216" cy="55" r="9"/><path class="v-hot" d="M216 46 V64 M207 55 H225"/></g></g><text class="v-t" x="296" y="102">CUBE</text></svg>
+                                <figcaption>HUB ejects CUBE, the booms deploy, and it settles along the field</figcaption>
+                            </figure>
+                            <p>
+                                Stella II is this year's NJIT RockSat mission. A stationary payload called HUB
+                                ejects a small cube, CUBE, 85 seconds into the flight. Once free, CUBE stops its
+                                own tumbling and lines itself up with Earth's magnetic field using three
+                                reaction wheels, while two spring-loaded booms hold magnetometers away from the
+                                electronics.
+                            </p>
+                            <p>
+                                I manage the electrical team and I'm designing CUBE's flight computer, the board
+                                that reads every sensor, logs the flight and talks to HUB by radio.
+                            </p>
+                            <ul>
+                                <li>Sensors: a 6-axis IMU and a high-g accelerometer sit on the board. The magnetometer sits out on a boom, so its SPI lines have series termination and its supply runs through a current-limited switch the processor can turn off if the boom faults.</li>
+                                <li>Data: the processor logs to its onboard microSD card and streams readings to HUB over an XBee 3 radio with an external 2.4 GHz antenna.</li>
+                                <li>Attitude control: a 40-pin board-to-board connector links it to the power and motor board, carrying I²C, three UART lines for the motor drivers, motor enable and fault signals.</li>
+                                <li>Power: 5 V comes in from the power board, and an always-on LDO makes a filtered 3.3 V rail for the sensors.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chain">
+                        <p class="chain-label">Data path</p>
+                        <ol>
+                            <li><span>IMU, accelerometer</span></li>
+                            <li><span>Boom magnetometer</span></li>
+                            <li class="hot"><span>Teensy 4.1</span></li>
+                            <li><span>microSD log</span></li>
+                            <li><span>XBee 3 radio</span></li>
+                            <li><span>HUB</span></li>
+                        </ol>
+                    </div>
+                    <div class="gallery">
+                        <figure><button type="button"><img src="assets/cubesat/fc-board-render.png" alt="3D render of the CUBE flight computer board" loading="lazy"></button><figcaption>Flight computer board, 3D render</figcaption></figure>
+                        <figure><button type="button"><img src="assets/cubesat/fc-block-diagram.png" alt="Block diagram of the CUBE flight computer" loading="lazy"></button><figcaption>Flight computer block diagram</figcaption></figure>
+                        <figure><button type="button"><img src="assets/cubesat/stella-payload.png" alt="CAD view of the Stella II payload with HUB and CUBE on the deck plate" loading="lazy"></button><figcaption>Stella II payload on its deck plate, team CAD</figcaption></figure>
+                        <figure><button type="button"><img src="assets/cubesat/cube-exploded.png" alt="Exploded CAD view of CUBE" loading="lazy"></button><figcaption>CUBE exploded view, team CAD</figcaption></figure>
                     </div>
                 </div>
+            </details>
 
-                <div class="about-grid">
-                    <img src="lifting.jpg" alt="Lifting">
-                    <img src="kbbq.jpg" alt="Food and lifestyle">
-                    <img src="thrifting.JPG" alt="Thrifting">
-                    <img src="nature.png" alt="Travel and experiences">
+            <details class="proj" id="bms" data-cat="power aero">
+                <summary>
+                    <span class="p-name">4S Battery Management System with Active Balancing</span>
+                    <span class="p-focus">Battery protection, power conversion, solo</span>
+                    <span class="p-meta"><span class="p-when">Sep 2026 to now</span><span class="tag wip">In progress</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">TI BQ76942, Multisim, CAN</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Pack</dt><dd>4S Li-ion</dd></div>
+                            <div><dt>Monitor</dt><dd>TI BQ76942</dd></div>
+                            <div><dt>Balancer</dt><dd>Bidirectional, inductor based</dd></div>
+                            <div><dt>Switching</dt><dd>100 kHz, ~1 A per stage</dd></div>
+                            <div><dt>Short circuit</dt><dd>160 A trip in 60 µs</dd></div>
+                            <div><dt>Protection</dt><dd>Tiered faults, redundant overvoltage</dd></div>
+                            <div><dt>Interface</dt><dd>CAN</dd></div>
+                            <div><dt>Simulation</dt><dd>Multisim, within 4% of hand calculation</dd></div>
+                            <div><dt>Status</dt><dd>Thresholds set, parts selected</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><rect class="v-box" x="40" y="30" width="44" height="60"/><rect class="v-box" x="56" y="26" width="12" height="5"/><rect class="v-fill cell c1" x="42" y="32" width="40" height="56"/><text class="v-t" x="48" y="104">cell 1</text><rect class="v-box" x="116" y="30" width="44" height="60"/><rect class="v-box" x="132" y="26" width="12" height="5"/><rect class="v-fill cell c2" x="118" y="32" width="40" height="56"/><text class="v-t" x="124" y="104">cell 2</text><rect class="v-box" x="192" y="30" width="44" height="60"/><rect class="v-box" x="208" y="26" width="12" height="5"/><rect class="v-fill cell c3" x="194" y="32" width="40" height="56"/><text class="v-t" x="200" y="104">cell 3</text><rect class="v-box" x="268" y="30" width="44" height="60"/><rect class="v-box" x="284" y="26" width="12" height="5"/><rect class="v-fill cell c4" x="270" y="32" width="40" height="56"/><text class="v-t" x="276" y="104">cell 4</text><path class="v-line" d="M138 26 V12 H190 M238 12 H290 V26"/><path class="v-hot" d="M190 12 q6 -11 12 0 q6 -11 12 0 q6 -11 12 0 q6 -11 12 0"/><text class="v-t" x="196" y="24">100 kHz</text><circle class="v-fill packet" cx="138" cy="12" r="3.5"/></svg>
+                                <figcaption>An inductor carries charge from the fullest cell to the emptiest</figcaption>
+                            </figure>
+                                                        <p>
+                                A four-cell lithium-ion battery management module aimed at electric aircraft.
+                                Instead of burning off charge from the fullest cell, it moves energy between
+                                cells through an inductor.
+                            </p>
+                            <ul>
+                                <li>Sized the balancer inductor from first principles, then simulated one stage in Multisim. Peak current, slopes and ramp times matched my hand calculations within 4%.</li>
+                                <li>Found a reverse-current fault in simulation, traced it to gate timing and fixed it.</li>
+                                <li>Defined tiered fault handling with a second, independent overvoltage layer.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chain">
+                        <p class="chain-label">Balancing path</p>
+                        <ol>
+                            <li><span>High cell</span></li>
+                            <li><span>Switch on</span></li>
+                            <li class="hot"><span>Inductor stores energy</span></li>
+                            <li><span>Switch off</span></li>
+                            <li><span>Neighbor cell</span></li>
+                        </ol>
+                    </div>
                 </div>
+            </details>
+
+            <details class="proj" id="evtol" data-cat="aero power">
+                <summary>
+                    <span class="p-name">Tilt-Rotor eVTOL UAV</span>
+                    <span class="p-focus">Senior capstone, founder and electromechanical lead</span>
+                    <span class="p-meta"><span class="p-when">Sep 2026 to now</span><span class="tag wip">In progress</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">Pixhawk 6X, ArduPilot QuadPlane, ExpressLRS, Creo, Fusion</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Team</dt><dd>6 people</dd></div>
+                            <div><dt>My part</dt><dd>Power distribution board, airframe</dd></div>
+                            <div><dt>Span</dt><dd>1.1 m</dd></div>
+                            <div><dt>Mass</dt><dd>2.5 kg</dd></div>
+                            <div><dt>Lift</dt><dd>4 tilting rotors, 11 in, 6S</dd></div>
+                            <div><dt>Cruise</dt><dd>Pusher prop</dd></div>
+                            <div><dt>Hover power</dt><dd>~285 W, estimated</dd></div>
+                            <div><dt>Thrust to weight</dt><dd>2.0</dd></div>
+                            <div><dt>Structure</dt><dd>Carbon tube, aluminum joints</dd></div>
+                            <div><dt>Testbed</dt><dd>0.7 m span, 9 in tilt props, 7 in pusher, 4S</dd></div>
+                            <div><dt>Status</dt><dd>Testbed preliminary design modeled</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><path class="v-box" d="M96 64 Q112 50 180 50 L250 56 L250 66 Q170 76 96 64 Z"/><path class="v-line" d="M250 60 H304"/><path class="v-box" d="M284 60 L296 30 L304 30 L300 60 Z"/><path class="v-box" d="M292 60 L310 34 L318 34 L306 60 Z"/><path class="v-line" d="M150 56 H222"/><path class="v-line" d="M128 66 V86 M124 86 H132 M268 60 V86 M264 86 H272"/><g class="rotor" style="transform-origin:120px 54px"><path class="v-hot" d="M120 54 V38"/><ellipse class="v-prop" cx="120" cy="37" rx="24" ry="3"/></g><g class="rotor" style="transform-origin:236px 50px"><path class="v-hot" d="M236 50 V34"/><ellipse class="v-prop" cx="236" cy="33" rx="24" ry="3"/></g><ellipse class="v-prop pusher" cx="310" cy="60" rx="2.5" ry="14"/><path class="v-line dash air" d="M20 30 H70 M20 46 H60 M20 78 H66"/><text class="v-t ph1" x="20" y="102">hover</text><text class="v-t ph2" x="20" y="102">cruise</text></svg>
+                                <figcaption>Four rotors tilt forward and a pusher takes over for cruise</figcaption>
+                            </figure>
+                                                        <p>
+                                An aircraft that takes off like a quadcopter, then tilts its rotors forward and
+                                flies on its wing. I proposed the concept, put together the team and lead the
+                                electromechanical side.
+                            </p>
+                            <ul>
+                                <li>Designing a power distribution board for the four tilt servos and the control-surface servos. It keeps the servo supply separate from the flight controller's, so a stalled servo cannot brown out the autopilot.</li>
+                                <li>Designing the airframe in Creo and Fusion, with a central tail boom that takes swappable V-tail and U-tail modules.</li>
+                                <li>Ran the mass and balance, moving the tail 110 mm forward to bring the center of gravity from about 64% to about 31% of chord.</li>
+                                <li>Designing a 0.7 m 3D-printed subscale testbed to prove the tilt mechanism and flight controls before the full-size aircraft flies. Its preliminary model has a V-tail with ruddervators, a servo and an encoder on each of the four tilt axes, and a pusher motor behind the tail.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chain">
+                        <p class="chain-label">Power path</p>
+                        <ol>
+                            <li><span>6S pack</span></li>
+                            <li><span>Distribution board</span></li>
+                            <li class="hot"><span>Servo rail, isolated</span></li>
+                            <li><span>4 tilt servos</span></li>
+                            <li><span>Control surfaces</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+
+            <details class="proj" id="optical" data-cat="rf aero">
+                <summary>
+                    <span class="p-name">Optical Sensor Bus for a Fixed-Wing UAV</span>
+                    <span class="p-focus">Fiber optics, receiver design, solo</span>
+                    <span class="p-meta"><span class="p-when">Sep 2026 to now</span><span class="tag wip">In progress</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">SPICE simulation, link budget analysis</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Network</dt><dd>4 nodes, star topology</dd></div>
+                            <div><dt>Nodes</dt><dd>Transmit only, no arbitration</dd></div>
+                            <div><dt>Receiver</dt><dd>Discrete TIA and comparator</dd></div>
+                            <div><dt>Bandwidth</dt><dd>7.8 MHz from 12 µA photocurrent</dd></div>
+                            <div><dt>Link margin</dt><dd>8.2 dB</dd></div>
+                            <div><dt>Status</dt><dd>Receiver validated in SPICE</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><path class="v-line" d="M46 20 L180 55"/><path class="v-line" d="M46 90 L180 55"/><path class="v-line" d="M314 20 L180 55"/><path class="v-line" d="M314 90 L180 55"/><rect class="v-box" x="34" y="12" width="24" height="16"/><text class="v-t" x="43" y="24">1</text><rect class="v-box" x="34" y="82" width="24" height="16"/><text class="v-t" x="43" y="94">2</text><rect class="v-box" x="302" y="12" width="24" height="16"/><text class="v-t" x="311" y="24">3</text><rect class="v-box" x="302" y="82" width="24" height="16"/><text class="v-t" x="311" y="94">4</text><circle class="v-fill pulse" style="--dx:134px;--dy:35px;animation-delay:0.00s" cx="46" cy="20" r="3.5"/><circle class="v-fill pulse" style="--dx:134px;--dy:-35px;animation-delay:0.55s" cx="46" cy="90" r="3.5"/><circle class="v-fill pulse" style="--dx:-134px;--dy:35px;animation-delay:1.10s" cx="314" cy="20" r="3.5"/><circle class="v-fill pulse" style="--dx:-134px;--dy:-35px;animation-delay:1.65s" cx="314" cy="90" r="3.5"/><circle class="v-fill pulse" style="--dx:134px;--dy:35px;animation-delay:1.10s" cx="46" cy="20" r="2.5"/><circle class="v-fill pulse" style="--dx:134px;--dy:-35px;animation-delay:1.65s" cx="46" cy="90" r="2.5"/><circle class="v-fill pulse" style="--dx:-134px;--dy:35px;animation-delay:2.20s" cx="314" cy="20" r="2.5"/><circle class="v-fill pulse" style="--dx:-134px;--dy:-35px;animation-delay:2.75s" cx="314" cy="90" r="2.5"/><circle class="v-hotbox rx" cx="180" cy="55" r="14"/><text class="v-t" x="169" y="59">TIA</text><text class="v-t" x="156" y="88">receiver</text></svg>
+                                <figcaption>Four sensor nodes send light down fiber to one receiver</figcaption>
+                            </figure>
+                                                        <p>
+                                A fiber-optic sensor network that replaces copper signal wires on a small
+                                aircraft, so sensor data is immune to electrical noise from servos and motors
+                                and each node is electrically isolated.
+                            </p>
+                            <ul>
+                                <li>Designed the optical receiver front end from discrete parts and validated it in simulation before layout.</li>
+                                <li>Worked out the link budget. Connector loss is about seven times the fiber loss, so performance barely depends on cable length.</li>
+                                <li>One node failing does not affect the other three.</li>
+                            </ul>
+                            <p>
+                                I started this expecting fiber to be faster. My own latency analysis showed
+                                propagation delay was about six orders of magnitude below the dominant term,
+                                so I dropped that idea and rebuilt the project around noise immunity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="chain">
+                        <p class="chain-label">Receive path</p>
+                        <ol>
+                            <li><span>Sensor node LED</span></li>
+                            <li><span>Fiber</span></li>
+                            <li><span>Photodiode</span></li>
+                            <li class="hot"><span>Transimpedance amp</span></li>
+                            <li><span>Comparator</span></li>
+                            <li><span>Flight computer</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+
+            <details class="proj" id="inverter" data-cat="power">
+                <summary>
+                    <span class="p-name">Boosted Pure Sine Wave Inverter</span>
+                    <span class="p-focus">DC-DC and DC-AC conversion, solo</span>
+                    <span class="p-meta"><span class="p-when">Sep 2026 to now</span><span class="tag wip">In progress</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">Multisim</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Input</dt><dd>12 V DC</dd></div>
+                            <div><dt>DC bus</dt><dd>36 V, boost at 50 kHz</dd></div>
+                            <div><dt>Output</dt><dd>20 V RMS, 60 Hz, 50 W</dd></div>
+                            <div><dt>Boost, simulated</dt><dd>35.9 V, under 0.1 V ripple, ~92% efficient</dd></div>
+                            <div><dt>Bridge</dt><dd>Full bridge, unipolar SPWM, IRF540N</dd></div>
+                            <div><dt>Filter</dt><dd>LC, 1 kHz cutoff</dd></div>
+                            <div><dt>Status</dt><dd>Boost stage simulated, bridge in development</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><rect class="v-dim2" x="27.0" y="14" width="3.2" height="14"/><rect class="v-dim2" x="39.1" y="14" width="5.4" height="14"/><rect class="v-dim2" x="51.3" y="14" width="7.5" height="14"/><rect class="v-dim2" x="63.6" y="14" width="9.1" height="14"/><rect class="v-dim2" x="76.2" y="14" width="10.3" height="14"/><rect class="v-dim2" x="89.1" y="14" width="10.9" height="14"/><rect class="v-dim2" x="102.3" y="14" width="10.9" height="14"/><rect class="v-dim2" x="115.8" y="14" width="10.3" height="14"/><rect class="v-dim2" x="129.6" y="14" width="9.1" height="14"/><rect class="v-dim2" x="143.7" y="14" width="7.5" height="14"/><rect class="v-dim2" x="157.9" y="14" width="5.4" height="14"/><rect class="v-dim2" x="172.2" y="14" width="3.2" height="14"/><rect class="v-dim2" x="185.4" y="28" width="3.2" height="14"/><rect class="v-dim2" x="197.5" y="28" width="5.4" height="14"/><rect class="v-dim2" x="209.7" y="28" width="7.5" height="14"/><rect class="v-dim2" x="222.0" y="28" width="9.1" height="14"/><rect class="v-dim2" x="234.6" y="28" width="10.3" height="14"/><rect class="v-dim2" x="247.5" y="28" width="10.9" height="14"/><rect class="v-dim2" x="260.7" y="28" width="10.9" height="14"/><rect class="v-dim2" x="274.2" y="28" width="10.3" height="14"/><rect class="v-dim2" x="288.0" y="28" width="9.1" height="14"/><rect class="v-dim2" x="302.1" y="28" width="7.5" height="14"/><rect class="v-dim2" x="316.3" y="28" width="5.4" height="14"/><rect class="v-dim2" x="330.6" y="28" width="3.2" height="14"/><path class="v-line" d="M22 28 H338"/><path class="v-line" d="M22 78 L27.3 75.9 L32.5 73.8 L37.8 71.8 L43.1 69.9 L48.3 68.0 L53.6 66.2 L58.9 64.6 L64.1 63.1 L69.4 61.8 L74.7 60.7 L79.9 59.7 L85.2 59.0 L90.5 58.4 L95.7 58.1 L101.0 58.0 L106.3 58.1 L111.5 58.4 L116.8 59.0 L122.1 59.7 L127.3 60.7 L132.6 61.8 L137.9 63.1 L143.1 64.6 L148.4 66.2 L153.7 68.0 L158.9 69.9 L164.2 71.8 L169.5 73.8 L174.7 75.9 L180.0 78.0 L185.3 80.1 L190.5 82.2 L195.8 84.2 L201.1 86.1 L206.3 88.0 L211.6 89.8 L216.9 91.4 L222.1 92.9 L227.4 94.2 L232.7 95.3 L237.9 96.3 L243.2 97.0 L248.5 97.6 L253.7 97.9 L259.0 98.0 L264.3 97.9 L269.5 97.6 L274.8 97.0 L280.1 96.3 L285.3 95.3 L290.6 94.2 L295.9 92.9 L301.1 91.4 L306.4 89.8 L311.7 88.0 L316.9 86.1 L322.2 84.2 L327.5 82.2 L332.7 80.1 L338.0 78.0"/><path class="v-hot runner" pathLength="100" d="M22 78 L27.3 75.9 L32.5 73.8 L37.8 71.8 L43.1 69.9 L48.3 68.0 L53.6 66.2 L58.9 64.6 L64.1 63.1 L69.4 61.8 L74.7 60.7 L79.9 59.7 L85.2 59.0 L90.5 58.4 L95.7 58.1 L101.0 58.0 L106.3 58.1 L111.5 58.4 L116.8 59.0 L122.1 59.7 L127.3 60.7 L132.6 61.8 L137.9 63.1 L143.1 64.6 L148.4 66.2 L153.7 68.0 L158.9 69.9 L164.2 71.8 L169.5 73.8 L174.7 75.9 L180.0 78.0 L185.3 80.1 L190.5 82.2 L195.8 84.2 L201.1 86.1 L206.3 88.0 L211.6 89.8 L216.9 91.4 L222.1 92.9 L227.4 94.2 L232.7 95.3 L237.9 96.3 L243.2 97.0 L248.5 97.6 L253.7 97.9 L259.0 98.0 L264.3 97.9 L269.5 97.6 L274.8 97.0 L280.1 96.3 L285.3 95.3 L290.6 94.2 L295.9 92.9 L301.1 91.4 L306.4 89.8 L311.7 88.0 L316.9 86.1 L322.2 84.2 L327.5 82.2 L332.7 80.1 L338.0 78.0"/></svg>
+                                <figcaption>Switched pulses in, filtered sine out</figcaption>
+                            </figure>
+                                                        <p>
+                                A single-phase inverter that steps a 12 V supply up to a 36 V bus, then shapes
+                                it into a clean 60 Hz sine wave.
+                            </p>
+                            <ul>
+                                <li>Sized the boost inductor, output capacitor, MOSFET and diode from duty cycle, ripple current and voltage stress.</li>
+                                <li>The simulated boost stage matches the calculations.</li>
+                                <li>Now developing the full bridge with a floating high-side gate drive.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chain">
+                        <p class="chain-label">Power path</p>
+                        <ol>
+                            <li><span>12 V DC</span></li>
+                            <li><span>Boost converter</span></li>
+                            <li><span>36 V bus</span></li>
+                            <li class="hot"><span>SPWM full bridge</span></li>
+                            <li><span>LC filter</span></li>
+                            <li><span>20 V RMS AC</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </details>
+
+            <details class="proj" id="rocksat" data-cat="aero power">
+                <summary>
+                    <span class="p-name">NASA RockSat Ionosphere Payload</span>
+                    <span class="p-focus">Mixed-signal PCB, bring-up</span>
+                    <span class="p-meta"><span class="p-when">Finished Apr 2026</span><span class="tag">Team</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">Altium, C++, bench instruments</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Program</dt><dd>NASA RockSat, sounding rocket</dd></div>
+                            <div><dt>Measured</dt><dd>Electron density in the ionosphere</dd></div>
+                            <div><dt>Instrument</dt><dd>Langmuir probe</dd></div>
+                            <div><dt>Boards</dt><dd>3-stage, 4-layer mixed-signal system</dd></div>
+                            <div><dt>Circuits</dt><dd>Digital, precision analog, dual RF telemetry</dd></div>
+                            <div><dt>Main rail</dt><dd>28 V to 5 V buck</dd></div>
+                            <div><dt>Logic rail</dt><dd>5 V to 3.3 V LDO</dd></div>
+                            <div><dt>Status</dt><dd>Complete</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><path class="v-line dash" d="M10 22 H350 M10 34 H350"/><text class="v-t" x="14" y="16">ionosphere</text><path class="v-line" d="M24 104 Q180 -62 336 104"/><circle class="v-fill rocket" r="5"/></svg>
+                                <figcaption>Up through the ionosphere and back</figcaption>
+                            </figure>
+                                                        <p>
+                                A student-built payload that flew on a NASA sounding rocket and measured electron
+                                density in the ionosphere with a Langmuir probe, with electrical, mechanical and software subteams
+                                working to one launch date.
+                            </p>
+                            <ul>
+                                <li>Co-designed the three-board, four-layer PCB system, which combines digital, precision analog and two RF telemetry circuits.</li>
+                                <li>Validated the power integrity of the 28 V to 5 V buck converters and the 5 V to 3.3 V regulators.</li>
+                                <li>Debugged the boards at the component level during bring-up.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TODO (Tendai): add the transmitter and receiver board renders. -->
+            <details class="proj" id="wing" data-cat="aero rf">
+                <summary>
+                    <span class="p-name">Flying Wing UAV with a Custom RC Link</span>
+                    <span class="p-focus">Radio link boards, airframe</span>
+                    <span class="p-meta"><span class="p-when">Jun to Jul 2025</span><span class="tag">Complete</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">KiCad, ESP32, nRF24L01</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Aircraft</dt><dd>Flying wing</dd></div>
+                            <div><dt>Radio</dt><dd>nRF24L01, 2.4 GHz</dd></div>
+                            <div><dt>Controller</dt><dd>ESP32</dd></div>
+                            <div><dt>Boards</dt><dd>Custom transmitter and receiver</dd></div>
+                            <div><dt>Code</dt><dd>Flight control firmware</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><rect class="v-box" x="22" y="74" width="22" height="18"/><path class="v-line" d="M33 74 V60"/><text class="v-t" x="18" y="104">TX</text><path class="v-hot ping" style="transform-origin:33px 60px" d="M41 50 A12 12 0 0 1 45 66"/><path class="v-hot ping d2" style="transform-origin:33px 60px" d="M41 50 A12 12 0 0 1 45 66"/><g class="wing"><path class="v-box" d="M240 20 L252 20 L262 44 L336 78 L336 88 L262 82 L230 82 L156 88 L156 78 L230 44 Z"/><path class="v-fill elev e1" d="M292 84.5 L336 88 L336 94 L292 90 Z"/><path class="v-fill elev e2" d="M200 84.5 L156 88 L156 94 L200 90 Z"/><path class="v-line" d="M246 20 V82"/></g></svg>
+                                <figcaption>Elevons steer the wing over a radio link I built</figcaption>
+                            </figure>
+                            <p>
+                                A flying wing that I control over a radio link I built myself instead of buying
+                                an off-the-shelf transmitter and receiver.
+                            </p>
+                            <ul>
+                                <li>Designed the transmitter and receiver boards in KiCad around an ESP32 and an nRF24L01 radio.</li>
+                                <li>Wrote the code that controls the aircraft.</li>
+                                <li>Modeled the airframe in CAD: a center body, two swept wing panels and an elevon on each.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="proj" id="pdb" data-cat="power">
+                <summary>
+                    <span class="p-name">High-Power Distribution Board</span>
+                    <span class="p-focus">PCB layout, high-current routing</span>
+                    <span class="p-meta"><span class="tag">Complete</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">KiCad</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Purpose</dt><dd>General bench and test power</dd></div>
+                            <div><dt>Regulator</dt><dd>LM2596 stage</dd></div>
+                            <div><dt>My part</dt><dd>Schematic, placement, routing</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><rect class="v-box" x="16" y="43" width="34" height="24"/><text class="v-t" x="24" y="59">IN</text><path class="v-hot flow" d="M50 55 H150 V18 H300"/><rect class="v-box" x="300" y="11" width="40" height="14"/><path class="v-hot flow" d="M50 55 H150 V43 H300"/><rect class="v-box" x="300" y="36" width="40" height="14"/><path class="v-hot flow" d="M50 55 H150 V67 H300"/><rect class="v-box" x="300" y="60" width="40" height="14"/><path class="v-hot flow" d="M50 55 H150 V92 H300"/><rect class="v-box" x="300" y="85" width="40" height="14"/></svg>
+                                <figcaption>One input, several protected outputs</figcaption>
+                            </figure>
+                                                        <p>
+                                A power distribution board for general testing, with control electronics on
+                                the same board as the high-current paths.
+                            </p>
+                            <ul>
+                                <li>Laid out the board, placed the components and routed the power paths for reliable current delivery.</li>
+                                <li>Learned the tradeoffs of routing wide, high-current traces while keeping the layout organized and manufacturable.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <figure><button type="button"><img src="Projects/pdbB.png" alt="3D render of the high-power distribution board" loading="lazy"></button><figcaption>3D board render</figcaption></figure>
+                        <figure><button type="button"><img src="Projects/pdbS.png" alt="High-power distribution board PCB layout" loading="lazy"></button><figcaption>PCB layout</figcaption></figure>
+                    </div>
+                </div>
+            </details>
+
+            <details class="proj" id="analog" data-cat="analog">
+                <summary>
+                    <span class="p-name">Analog Circuits Coursework</span>
+                    <span class="p-focus">Amplifiers, filters, comparators</span>
+                    <span class="p-meta"><span class="tag">Coursework</span></span>
+                </summary>
+                <div class="sheet">
+                    <p class="tools">BJTs, LM311 comparators, ESP32, Multisim</p>
+                    <div class="sheet-grid">
+                        <dl class="specs">
+                            <div><dt>Voice modulator</dt><dd>Mic, pre-amp, band-pass filter, ESP32, power amp</dd></div>
+                            <div><dt>Amplifier</dt><dd>3 BJT stages, target gain ~1000</dd></div>
+                            <div><dt>Bargraph</dt><dd>4 LM311 comparators, Zener reference</dd></div>
+                        </dl>
+                        <div class="desc">
+                            <figure class="viz" aria-hidden="true">
+                                <svg viewBox="0 0 360 110" focusable="false"><path class="v-line" d="M24 90 L150 24"/><circle class="v-fill ramp" cx="24" cy="90" r="4.5"/><text class="v-t" x="24" y="104">input</text><rect class="v-fill led" style="animation-delay:0.00s" x="196" y="38" width="26" height="34"/><rect class="v-fill led" style="animation-delay:0.70s" x="234" y="38" width="26" height="34"/><rect class="v-fill led" style="animation-delay:1.40s" x="272" y="38" width="26" height="34"/><rect class="v-fill led" style="animation-delay:2.10s" x="310" y="38" width="26" height="34"/></svg>
+                                <figcaption>Each comparator lights an LED as the input rises</figcaption>
+                            </figure>
+                            <p>Three lab builds from my analog and digital circuits courses.</p>
+                            <ul>
+                                <li><strong>Analog and digital voice modulator.</strong> Our final project: it captures a voice, filters and amplifies it, changes it digitally on an ESP32 and plays it through a speaker. We tested it stage by stage, then debugged the full chain into a working prototype.</li>
+                                <li><strong>Multistage voltage amplifier.</strong> Two common-emitter stages for gain and an emitter follower to buffer the output. Comparing simulated and measured gain showed where real parts fall short of the model.</li>
+                                <li><strong>4-level bargraph display.</strong> A Zener reference is divided into four thresholds, and each comparator lights an LED when the input passes its threshold.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <figure><button type="button"><img src="Projects/voicemod.png" alt="Voice modulator system build" loading="lazy"></button><figcaption>Voice modulator, system build</figcaption></figure>
+                        <figure><button type="button"><img src="Projects/vm.phs.png" alt="Voice modulator circuit" loading="lazy"></button><figcaption>Voice modulator, circuit</figcaption></figure>
+                        <figure><button type="button"><img src="Projects/multistage.png" alt="Multistage amplifier circuit design" loading="lazy"></button><figcaption>Multistage amplifier, circuit design</figcaption></figure>
+                        <figure><button type="button"><img src="Projects/multistage.phs.png" alt="Multistage amplifier on the bench" loading="lazy"></button><figcaption>Multistage amplifier, test setup</figcaption></figure>
+                        <figure><button type="button"><img src="Projects/level.dcirc.png" alt="Bargraph display circuit design" loading="lazy"></button><figcaption>Bargraph display, circuit design</figcaption></figure>
+                        <figure><button type="button"><img src="Projects/level.dmultisim.png" alt="Bargraph display Multisim simulation" loading="lazy"></button><figcaption>Bargraph display, Multisim simulation</figcaption></figure>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================================================================
+     EXPERIENCE
+================================================================ -->
+<section class="section" id="experience">
+    <div class="wrap">
+        <div class="sec-head">
+            <h2>Experience</h2>
+            <p>Research in NJIT labs on robot swarms, autonomous drones and robotic hands, and a NASA rocket team.</p>
+        </div>
+
+        <div class="roles">
+            <article class="role">
+                <p class="role-when">Oct 2026 to now</p>
+                <div>
+                    <h3>Research Assistant</h3>
+                    <p class="org">Swissler Innovative Robotics Lab, NJIT</p>
+                    <div class="desc">
+                        <p>
+                            I design circuit subsystems and PCBs in KiCad for modular robots that assemble
+                            themselves into swarms, then solder, assemble and debug the boards on the bench.
+                        </p>
+                    </div>
+                    <div class="tags"><span class="tag">PCB design</span><span class="tag">KiCad</span><span class="tag">Bench debugging</span></div>
+                </div>
+            </article>
+
+            <article class="role">
+                <p class="role-when">Jun 2025 to now</p>
+                <div>
+                    <h3>Undergraduate Research Lead</h3>
+                    <p class="org">Network and Intelligent Systems Lab, NJIT</p>
+                    <div class="desc">
+                        <p>
+                            Our team wrote "EcoFlight: Low-Energy Path Finding Through Obstacles for
+                            Autonomous Sensing Drones," an algorithm that helps a drone choose obstacle-free
+                            paths that use less energy. It was presented at MIT URTC and published by IEEE.
+                        </p>
+                        <p>
+                            After validating it in simulation, we are bringing it into real flight on a
+                            custom data-collection drone. I designed and built it, modeling its structural and
+                            payload parts in Creo, and I assemble, solder and power-check its electronics
+                            before each flight test.
+                        </p>
+                        <p>
+                            Our second paper, "3D Indoor Space Sizing for Drone Flight Planning Using
+                            Stereoscopic Imagery," was accepted and presented at MIT URTC and is on its way
+                            into IEEE Xplore. Indoors there is no GPS, and LiDAR adds cost, power draw and weight, so it
+                            uses two consumer webcams 0.25 m apart to build a 3D point cloud and measure
+                            obstacles, openings and flight clearances.
+                        </p>
+                        <div class="sheet-links">
+                            <a class="btn small" href="Research/drone_paper.pdf.pdf" target="_blank" rel="noopener" data-track="paper_open" data-label="ecoflight">Read the EcoFlight paper (PDF)</a>
+                            <a class="btn small" href="Research/3d-indoor-space-sizing-paper.pdf" target="_blank" rel="noopener" data-track="paper_open" data-label="space-sizing">Read the 3D space sizing paper (PDF)</a>
+                        </div>
+                    </div>
+                    <div class="tags"><span class="tag">Autonomous flight</span><span class="tag">Path planning</span><span class="tag">Stereo vision</span><span class="tag">Hardware integration</span></div>
+                </div>
+            </article>
+
+            <article class="role">
+                <p class="role-when">Sep 2026 to now</p>
+                <div>
+                    <h3>Electrical Team Manager</h3>
+                    <p class="org">NJIT RockSat, NASA sounding rocket program</p>
+                    <div class="desc">
+                        <p>
+                            I manage the electrical team for NJIT's RockSat payloads. Our last payload measured
+                            electron density in the ionosphere. The current mission, Stella II, ejects a cube that
+                            steadies itself and measures Earth's magnetic field, and I'm designing its flight
+                            computer. The team has 25+ members across four subteams.
+                        </p>
+                        <div class="sheet-links">
+                            <a class="btn small" href="#cubesat">See the CUBE flight computer</a>
+                        </div>
+                    </div>
+                    <div class="tags"><span class="tag">Team management</span><span class="tag">Flight hardware</span><span class="tag">PCB design</span></div>
+                </div>
+            </article>
+
+            <article class="role">
+                <p class="role-when">May 2026 to Oct 2026</p>
+                <div>
+                    <h3>Undergraduate Research Assistant</h3>
+                    <p class="org">Controls, Automation and Robotics Lab, NJIT</p>
+                    <div class="desc">
+                        <p>
+                            I worked under a PhD candidate on dexterous in-hand manipulation for humanoid
+                            robotic hands, one of the problems standing between today's robots and ones that
+                            can make you an omelet or fold your laundry. I designed linkage-driven finger
+                            mechanisms and actuator mounts for a robotic hand in Creo, reviewed the grasping
+                            and control literature, and scoped simulation of finger motion and grasping in MuJoCo.
+                        </p>
+                    </div>
+                    <div class="tags"><span class="tag">Robotic hands</span><span class="tag">Creo</span><span class="tag">MuJoCo</span></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ================================================================
+     SKILLS
+================================================================ -->
+<section class="section" id="skills">
+    <div class="wrap">
+        <div class="sec-head">
+            <h2>Skills</h2>
+        </div>
+        <div class="skills">
+            <div><h3>Simulation &amp; CAD</h3><p>Altium, KiCad, Multisim, LTspice, openEMS, COMSOL, MATLAB, Simulink, Creo Parametric</p></div>
+            <div><h3>Instrumentation</h3><p>Oscilloscope, Waveform Generator, Multimeter, Power Supply, Spectrum Analyzer, Logic Analyzer</p></div>
+            <div><h3>Embedded/Programming</h3><p>Python, C++, Linux, UART, I<sup>2</sup>C, CAN, SPI</p></div>
+            <div><h3>Relevant Coursework</h3><p>High Speed Electronics (RF), Power Electronics, Electronics Design, Advanced &amp; Feedback Controls</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================================================
+     ABOUT
+================================================================ -->
+<section class="section" id="about">
+    <div class="wrap">
+        <div class="sec-head">
+            <h2>About</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-copy">
+                <div class="portrait">
+                    <img src="21-_MG_0433.jpg" alt="Portrait of Tendai Chimuka">
+                    <div>
+                        <strong>Tendai Chimuka</strong>
+                        <span>Born and raised in Zimbabwe</span>
+                    </div>
+                </div>
+                <p>
+                    I was born and raised in Zimbabwe, and I'm bilingual in English and Shona. A lot of who I
+                    am comes from that background. It shapes the way I think, work and connect with people.
+                </p>
+                <p>
+                    I'm drawn to aviation, robotics and high-speed communications, and to research: working
+                    through a problem methodically until the hardware does what the math says it should.
+                </p>
+                <p>
+                    Away from the bench I run, lift and cook, and I'll do pretty much any physical activity
+                    except the dishes. I play a lot of Microsoft Flight Simulator, No Man's Sky, GTA V and
+                    Call of Duty. I take Chipotle and Wingstop very seriously, and I still think the banana
+                    milkshake is one of humanity's best inventions.
+                </p>
+            </div>
+            <div class="photos">
+                <img src="lifting.jpg" alt="Tendai lifting" loading="lazy">
+                <img src="kbbq.jpg" alt="Korean barbecue with friends" loading="lazy">
+                <img src="thrifting.JPG" alt="Thrifting" loading="lazy">
+                <img src="nature.png" alt="Outdoors" loading="lazy">
             </div>
         </div>
-   
+    </div>
+</section>
 
-    <footer>
-        <p>© 2026 Tendai Chimuka. Built with curiosity.</p>
-    </footer>
+<!-- ================================================================
+     CONTACT
+================================================================ -->
+<section class="contact" id="contact">
+    <div class="wrap">
+        <h2>Get in touch</h2>
+        <p>I'm looking for hardware roles in RF, power electronics and aerospace. Email or LinkedIn is the quickest way to reach me.</p>
 
+        <dl class="contact-rows">
+            <div class="contact-row" id="email-row" hidden>
+                <dt>Email</dt>
+                <dd>
+                    <span class="mono" id="email"></span>
+                    <button class="btn small" type="button" id="copy-email">Copy email</button>
+                </dd>
+            </div>
+            <div class="contact-row">
+                <dt>LinkedIn</dt>
+                <dd><a class="textlink" href="https://www.linkedin.com/in/tendai-chimuka-2159a225b/" target="_blank" rel="noopener" data-track="contact_click" data-label="linkedin">linkedin.com/in/tendai-chimuka-2159a225b</a></dd>
+            </div>
+            <div class="contact-row">
+                <dt>GitHub</dt>
+                <dd><a class="textlink" href="https://github.com/Goldfacee" target="_blank" rel="noopener" data-track="contact_click" data-label="github">github.com/Goldfacee</a></dd>
+            </div>
+            <div class="contact-row" id="resumes">
+                <dt>Resume</dt>
+                <dd id="resume-row"><a class="btn small" href="Resume/Tendai_Chimuka_Resume.pdf" target="_blank" rel="noopener">Open resume (PDF)</a></dd>
+            </div>
+        </dl>
+
+        <p class="foot">© 2026 Tendai Chimuka</p>
+    </div>
+</section>
+
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-bar">
+        <p id="lightbox-cap"></p>
+        <button class="btn small" type="button" id="lightbox-close">Close</button>
+    </div>
+</dialog>
+
+<script>
+(function () {
+    'use strict';
+
+    /* ==============================================================
+       SETTINGS  (the only part of this script you should need to edit)
+    ============================================================== */
+
+    /* Public contact email. Leave empty to hide the email row. */
+    var EMAIL = 'ttc@njit.edu';
+
+    /* Resume versions. The first one with a file is the default.
+       Put each PDF in the Resume folder and fill in its file path.
+       Versions with an empty file stay hidden. */
+    var RESUMES = [
+        { id: 'general',   label: 'General hardware',       file: 'Resume/Tendai_Chimuka_Resume.pdf' },
+        { id: 'rf',        label: 'RF and optoelectronics', file: '' },
+        { id: 'power',     label: 'Power electronics',      file: '' },
+        { id: 'aerospace', label: 'Aerospace and avionics', file: '' }
+    ];
+
+    /* Visitor analytics is installed by the Google tag at the top of this
+       file, so leave this empty. It is only for loading a different
+       G-XXXXXXXXXX measurement ID without that tag. */
+    var GA_ID = '';
+
+    /* ============================================================== */
+
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function $(id) { return document.getElementById(id); }
+    function each(list, fn) { [].forEach.call(list, fn); }
+
+    /* ---------- Analytics ---------- */
+    if (GA_ID) {
+        var g = document.createElement('script');
+        g.async = true;
+        g.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+        document.head.appendChild(g);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', GA_ID);
+    }
+    function track(name, params) {
+        if (window.gtag) window.gtag('event', name, params || {});
+    }
+    document.addEventListener('click', function (e) {
+        var el = e.target.closest ? e.target.closest('[data-track]') : null;
+        if (el) track(el.getAttribute('data-track'), { label: el.getAttribute('data-label') || '' });
+    });
+
+    /* ---------- Resumes ---------- */
+    var resumes = RESUMES.filter(function (r) { return r.file; });
+    var resumeBtn = $('resume-btn'), resumeList = $('resume-list'), resumeRow = $('resume-row'), heroResume = $('hero-resume');
+    function resumeLink(r, cls, text) {
+        var a = document.createElement('a');
+        a.href = r.file; a.target = '_blank'; a.rel = 'noopener';
+        if (cls) a.className = cls;
+        a.textContent = text;
+        a.setAttribute('data-track', 'resume_open');
+        a.setAttribute('data-label', r.id);
+        return a;
+    }
+    if (resumes.length) {
+        var main = resumes[0];
+        resumeRow.textContent = '';
+        resumes.forEach(function (r) {
+            resumeRow.appendChild(resumeLink(r, 'btn small', resumes.length > 1 ? r.label : 'Open resume (PDF)'));
+        });
+        if (resumes.length === 1) {
+            [resumeBtn, heroResume].forEach(function (a) {
+                a.href = main.file; a.target = '_blank'; a.rel = 'noopener';
+                a.setAttribute('data-track', 'resume_open'); a.setAttribute('data-label', main.id);
+            });
+        } else {
+            heroResume.textContent = 'Choose a resume';
+            heroResume.removeAttribute('target');
+            resumes.forEach(function (r) {
+                var li = document.createElement('li');
+                li.appendChild(resumeLink(r, '', r.label));
+                resumeList.appendChild(li);
+            });
+            resumeBtn.setAttribute('aria-expanded', 'false');
+            resumeBtn.setAttribute('aria-controls', 'resume-list');
+            resumeBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var open = resumeList.hidden;
+                resumeList.hidden = !open;
+                resumeBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.resume-menu')) { resumeList.hidden = true; resumeBtn.setAttribute('aria-expanded', 'false'); }
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !resumeList.hidden) { resumeList.hidden = true; resumeBtn.setAttribute('aria-expanded', 'false'); resumeBtn.focus(); }
+            });
+        }
+    }
+
+    /* ---------- Email row ---------- */
+    if (EMAIL) {
+        var emailEl = $('email'), copyBtn = $('copy-email');
+        var mail = document.createElement('a');
+        mail.href = 'mailto:' + EMAIL; mail.className = 'textlink'; mail.textContent = EMAIL;
+        mail.setAttribute('data-track', 'contact_click'); mail.setAttribute('data-label', 'email');
+        emailEl.appendChild(mail);
+        $('email-row').hidden = false;
+        copyBtn.addEventListener('click', function () {
+            var done = function () {
+                copyBtn.textContent = 'Copied';
+                track('email_copy');
+                setTimeout(function () { copyBtn.textContent = 'Copy email'; }, 1800);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(EMAIL).then(done, function () {});
+            } else {
+                var r = document.createRange(); r.selectNodeContents(emailEl);
+                var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+            }
+        });
+    }
+
+    /* ---------- Hide images that fail to load ---------- */
+    function dropImage(img) {
+        var holder = img.closest('figure') || img;
+        holder.style.display = 'none';
+        var gallery = img.closest('.gallery');
+        if (gallery) {
+            var visible = [].some.call(gallery.children, function (c) { return c.style.display !== 'none'; });
+            if (!visible) gallery.style.display = 'none';
+        }
+    }
+    each(document.querySelectorAll('main img'), function (img) {
+        if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) dropImage(img);
+        img.addEventListener('error', function () { dropImage(img); });
+    });
+
+    /* ---------- Scroll progress ---------- */
+    var progress = $('progress'), ticking = false;
+    function updateProgress() {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+        ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+    }, { passive: true });
+    updateProgress();
+
+    /* ---------- Highlight the current section in the nav ---------- */
+    var navLinks = {};
+    each(document.querySelectorAll('.bar nav a'), function (a) { navLinks[a.getAttribute('href').slice(1)] = a; });
+    if ('IntersectionObserver' in window) {
+        var setCurrent = function (current) {
+            Object.keys(navLinks).forEach(function (id) {
+                if (id === current) navLinks[id].setAttribute('aria-current', 'true');
+                else navLinks[id].removeAttribute('aria-current');
+            });
+        };
+        var spy = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { if (e.isIntersecting) setCurrent(e.target.id === 'top' ? '' : e.target.id); });
+        }, { rootMargin: '-35% 0px -60% 0px' });
+        Object.keys(navLinks).concat('top').forEach(function (id) { var sec = $(id); if (sec) spy.observe(sec); });
+    }
+
+    /* ---------- Projects: filters, open all, tracking ---------- */
+    var chips = document.querySelectorAll('.chip[data-filter]');
+    var projects = document.querySelectorAll('.proj');
+    var count = $('count'), toggleAll = $('toggle-all');
+    function applyFilter(key) {
+        var shown = 0;
+        each(projects, function (p) {
+            var match = key === 'all' || p.dataset.cat.split(' ').indexOf(key) !== -1;
+            p.hidden = !match;
+            if (match) shown++;
+        });
+        each(chips, function (c) { c.setAttribute('aria-pressed', c.dataset.filter === key ? 'true' : 'false'); });
+        count.textContent = key === 'all' ? projects.length + ' projects' : shown + ' of ' + projects.length + ' projects';
+    }
+    each(chips, function (c) { c.addEventListener('click', function () { applyFilter(c.dataset.filter); }); });
+    applyFilter('all');
+
+    function syncToggle() {
+        var anyClosed = [].some.call(projects, function (p) { return !p.hidden && !p.open; });
+        toggleAll.textContent = anyClosed ? 'Open all' : 'Close all';
+    }
+    toggleAll.addEventListener('click', function () {
+        var open = toggleAll.textContent === 'Open all';
+        each(projects, function (p) { if (!p.hidden) p.open = open; });
+        syncToggle();
+    });
+    each(projects, function (p) {
+        p.addEventListener('toggle', function () {
+            if (p.open) track('project_open', { label: p.id });
+            syncToggle();
+        });
+    });
+
+    function openFromHash() {
+        var el = $(location.hash.slice(1));
+        if (el && el.classList.contains('proj')) { applyFilter('all'); el.open = true; }
+    }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+
+    /* ---------- Image viewer ---------- */
+    var box = $('lightbox'), boxImg = $('lightbox-img'), boxCap = $('lightbox-cap');
+    if (box && typeof box.showModal === 'function') {
+        each(document.querySelectorAll('.gallery button'), function (btn) {
+            btn.addEventListener('click', function () {
+                var img = btn.querySelector('img');
+                var cap = btn.parentNode.querySelector('figcaption');
+                boxImg.src = img.currentSrc || img.src;
+                boxImg.alt = img.alt;
+                boxCap.textContent = cap ? cap.textContent : '';
+                box.showModal();
+            });
+        });
+        $('lightbox-close').addEventListener('click', function () { box.close(); });
+        box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+    }
+
+
+    /* ==============================================================
+       Bench demo: three small signal models, one per focus area.
+       They are illustrations, not measured data.
+    ============================================================== */
+    var canvas = $('scope');
+    var ctx = canvas.getContext && canvas.getContext('2d');
+    if (!ctx) return;
+
+    var VIOLET = '#a78bfa', GRAY = '#8e8e99', FAINT = '#5c5c66', RULE = '#25252b', RULE2 = '#3b3b46';
+    var MONO = '12px "JetBrains Mono", ui-monospace, monospace';
+    var W = 0, H = 0, dpr = 1, clock = 0;
+    var mode = 'rf';
+    var labels = [$('l-0'), $('l-1'), $('l-2')], values = [$('r-0'), $('r-1'), $('r-2')];
+    var titleEl = $('scope-title'), hintEl = $('scope-hint'), noteEl = $('scope-note');
+
+    /* pointer state */
+    var v = 0, vTarget = 0;            /* rf: target speed, m/s */
+    var pos = 0.6, posTarget = 0.6;    /* power and optical: 0..1 across the screen */
+    var lastX = null, lastT = 0, lastMove = -1e9;
+
+    function grid(h) {
+        ctx.strokeStyle = '#1b1b21'; ctx.lineWidth = 1; ctx.beginPath();
+        for (var i = 1; i < 10; i++) { var gx = Math.round(W * i / 10) + 0.5; ctx.moveTo(gx, 0); ctx.lineTo(gx, h); }
+        ctx.stroke();
+    }
+    function rule(y) {
+        ctx.strokeStyle = RULE; ctx.lineWidth = 1; ctx.beginPath();
+        ctx.moveTo(0, Math.round(y) + 0.5); ctx.lineTo(W, Math.round(y) + 0.5); ctx.stroke();
+    }
+    function label(text, x, y, color, align) {
+        ctx.font = MONO; ctx.textBaseline = 'top'; ctx.textAlign = align || 'left';
+        ctx.fillStyle = color; ctx.fillText(text, x, y); ctx.textAlign = 'left';
+    }
+    function plot(fn, color, width, step) {
+        ctx.beginPath();
+        for (var x = 0; x <= W; x += step || 2) { var y = fn(x / W); if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
+        ctx.strokeStyle = color; ctx.lineWidth = width; ctx.stroke();
+    }
+    /* repeatable pseudo-random number in 0..1 */
+    function rnd(n) { var s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); }
+
+    var HZ_PER_MS = 2 * 5.8e9 / 299792458, MAX_V = 15;
+    var BUS = 36;                                     /* inverter DC bus, volts */
+    var I_DESIGN = 12, MARGIN_DESIGN = 8.2;           /* optical receiver design point */
+
+    var MODES = {
+        rf: {
+            title: 'Doppler radar, 5.8 GHz',
+            hint: 'Sweep your pointer across the screen',
+            note: "A model of the IQ output from the radar I'm building, not measured data. At 5.8 GHz a target shifts the return by 38.7 Hz for every m/s, and the sign of the shift gives its direction.",
+            labels: ['Target speed', 'Doppler shift', 'Direction'],
+            read: function () {
+                var s = Math.abs(v);
+                return [s.toFixed(1) + ' m/s', Math.round(s * HZ_PER_MS) + ' Hz', s < 0.15 ? 'No target' : (v > 0 ? 'Approaching' : 'Receding')];
+            },
+            draw: function () {
+                var fd = v * HZ_PER_MS, level = Math.min(1, Math.abs(v) / 0.4);
+                var topH = H * 0.64, amp = topH * 0.17 * level, ph = clock * (0.5 + Math.abs(v) * 0.18) * (v < 0 ? -1 : 1);
+                grid(topH);
+                plot(function (u) { return topH * 0.28 - amp * Math.cos(2 * Math.PI * fd * u * 0.04 + ph); }, VIOLET, 2);
+                plot(function (u) { return topH * 0.72 - amp * Math.cos(2 * Math.PI * fd * u * 0.04 + ph - Math.PI / 2); }, GRAY, 1.5);
+                label('I', 10, 8, VIOLET); label('Q', 10, topH * 0.5 + 6, GRAY); label('40 ms', W - 10, 8, FAINT, 'right');
+                rule(topH);
+
+                var base = H - 20, span = MAX_V * HZ_PER_MS;
+                var fx = function (f) { return W / 2 + (f / span) * (W / 2 - 14); };
+                ctx.strokeStyle = RULE2; ctx.beginPath(); ctx.moveTo(8, base + 0.5); ctx.lineTo(W - 8, base + 0.5); ctx.stroke();
+                [-500, -250, 0, 250, 500].forEach(function (f) {
+                    var x = Math.round(fx(f)) + 0.5;
+                    ctx.beginPath(); ctx.moveTo(x, base); ctx.lineTo(x, base + 4); ctx.stroke();
+                    label((f > 0 ? '+' : '') + f + (f === 0 ? ' Hz' : ''), x, base + 6, FAINT, 'center');
+                });
+                var peakH = (H - topH - 40) * level, px = fx(fd);
+                ctx.beginPath(); ctx.moveTo(8, base);
+                for (var sx = 8; sx <= W - 8; sx += 2) {
+                    var d = (sx - px) / 7;
+                    var noise = 2 + 1.5 * Math.sin(sx * 0.9 + clock * 1.5) * Math.sin(sx * 0.23);
+                    ctx.lineTo(sx, base - noise - peakH * Math.exp(-d * d));
+                }
+                ctx.lineTo(W - 8, base); ctx.closePath();
+                ctx.fillStyle = 'rgba(124, 58, 237, 0.28)'; ctx.fill();
+                ctx.strokeStyle = VIOLET; ctx.lineWidth = 1.5; ctx.stroke();
+            }
+        },
+
+        power: {
+            title: 'Sine wave inverter, 60 Hz',
+            hint: 'Move left and right to set the output',
+            note: "A model of the unipolar SPWM bridge in my inverter project, not measured data. The bridge switches a 36 V bus in pulses whose width follows a sine. An LC filter averages the pulses into a 60 Hz output.",
+            labels: ['Modulation index', 'Output', 'DC bus'],
+            read: function () {
+                return [pos.toFixed(2), (pos * BUS / Math.SQRT2).toFixed(1) + ' V RMS', BUS + ' V'];
+            },
+            draw: function () {
+                var m = pos, topH = H * 0.52, ph = clock * 1.6, cycles = 2, ratio = 15;
+                var mid = topH * 0.52, a = topH * 0.34;
+                grid(H);
+                var tri = function (x) { var f = x - Math.floor(x); return f < 0.5 ? 4 * f - 1 : 3 - 4 * f; };
+                var bridge = function (u) {
+                    var th = 2 * Math.PI * cycles * u + ph, ref = m * Math.sin(th), c = tri(ratio * th / (2 * Math.PI));
+                    return (ref > c ? 1 : 0) - (-ref > c ? 1 : 0);
+                };
+                ctx.beginPath();
+                var prev = null;
+                for (var x = 0; x <= W; x += 1) {
+                    var s = bridge(x / W), y = mid - a * s;
+                    if (prev === null) ctx.moveTo(x, y); else { if (s !== prev) ctx.lineTo(x, mid - a * prev); ctx.lineTo(x, y); }
+                    prev = s;
+                }
+                ctx.strokeStyle = VIOLET; ctx.lineWidth = 1.5; ctx.stroke();
+                label('Bridge output', 10, 8, VIOLET); label('+36 V', W - 10, 8, FAINT, 'right');
+                rule(topH);
+
+                var mid2 = topH + (H - topH) * 0.52, a2 = (H - topH) * 0.36;
+                ctx.setLineDash([4, 6]);
+                plot(function () { return mid2; }, RULE2, 1, W);
+                ctx.setLineDash([]);
+                plot(function (u) { return mid2 - a2 * m * Math.sin(2 * Math.PI * cycles * u + ph); }, '#ddd2ff', 2);
+                label('After the LC filter', 10, topH + 8, GRAY);
+            }
+        },
+
+        opto: {
+            title: 'Optical receiver',
+            hint: 'Move left for less light, right for more',
+            note: "A model of the fiber receiver in my optical sensor bus, not measured data. The photodiode current is amplified and compared with a threshold. The design point is 12 µA with 8.2 dB of margin, and with too little light the noise causes bit errors.",
+            labels: ['Photocurrent', 'Link margin', 'Link'],
+            current: function () { return 0.6 * Math.pow(50, pos); },         /* 0.6 to 30 µA */
+            read: function () {
+                var i = this.current(), margin = MARGIN_DESIGN + 10 * Math.log(i / I_DESIGN) / Math.LN10;
+                return [i.toFixed(1) + ' µA', (margin >= 0 ? '+' : '') + margin.toFixed(1) + ' dB', margin > 1.5 ? 'Clean' : (margin > -1 ? 'Marginal' : 'Bit errors')];
+            },
+            draw: function () {
+                var i = this.current(), bits = 14, shift = clock * 1.3, rowH = H / 3;
+                var sig = Math.min(1, i / I_DESIGN), noiseAmp = 0.07;
+                var bit = function (u) { return rnd(Math.floor(u * bits + shift)) > 0.5 ? 1 : 0; };
+                var analog = function (u) {
+                    var pos2 = u * bits + shift, k = Math.floor(pos2), f = pos2 - k;
+                    var a = rnd(k - 1) > 0.5 ? 1 : 0, b = rnd(k) > 0.5 ? 1 : 0;
+                    var e = f < 0.3 ? a + (b - a) * (f / 0.3) : b;                 /* limited bandwidth */
+                    var n = (rnd(Math.floor(pos2 * 9) + 500) - 0.5) * 2 * noiseAmp;
+                    return e * sig + n;
+                };
+                grid(H);
+                var row = function (r, fn, color, width, lo, hi) {
+                    var y0 = rowH * r + rowH * 0.78, span = rowH * 0.5;
+                    ctx.beginPath();
+                    for (var x = 0; x <= W; x += 2) {
+                        var val = (fn(x / W) - lo) / (hi - lo), y = y0 - span * val;
+                        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                    }
+                    ctx.strokeStyle = color; ctx.lineWidth = width; ctx.stroke();
+                    return { y0: y0, span: span };
+                };
+                row(0, bit, GRAY, 1.5, 0, 1);
+                label('Sent', 10, 6, GRAY);
+                rule(rowH);
+                var r1 = row(1, analog, VIOLET, 1.5, -0.15, 1.1);
+                var thr = sig / 2, ty = r1.y0 - r1.span * ((thr + 0.15) / 1.25);
+                ctx.setLineDash([4, 6]); ctx.strokeStyle = '#ddd2ff'; ctx.lineWidth = 1;
+                ctx.beginPath(); ctx.moveTo(0, ty); ctx.lineTo(W, ty); ctx.stroke(); ctx.setLineDash([]);
+                label('After the amplifier', 10, rowH + 6, VIOLET); label('threshold', W - 10, rowH + 6, FAINT, 'right');
+                rule(rowH * 2);
+                row(2, function (u) { return analog(u) > thr ? 1 : 0; }, '#ddd2ff', 1.5, 0, 1);
+                label('Decoded', 10, rowH * 2 + 6, GRAY);
+            }
+        }
+    };
+
+    function draw() { ctx.clearRect(0, 0, W, H); MODES[mode].draw(); }
+    function readout() { var r = MODES[mode].read(); for (var k = 0; k < 3; k++) values[k].textContent = r[k]; }
+
+    function setMode(next, user) {
+        mode = next;
+        var m = MODES[mode];
+        titleEl.textContent = m.title; hintEl.textContent = m.hint; noteEl.textContent = m.note;
+        for (var k = 0; k < 3; k++) labels[k].textContent = m.labels[k];
+        each(document.querySelectorAll('.tab'), function (t) { t.setAttribute('aria-pressed', t.dataset.mode === mode ? 'true' : 'false'); });
+        v = 0; vTarget = 0; lastX = null;
+        if (reduceMotion) { v = 3; pos = mode === 'power' ? 0.79 : 0.6; }
+        draw(); readout();
+        if (user) track('demo_mode', { label: mode });
+    }
+    each(document.querySelectorAll('.tab'), function (t) { t.addEventListener('click', function () { setMode(t.dataset.mode, true); }); });
+
+    function resize() {
+        var rect = canvas.getBoundingClientRect();
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = Math.max(1, Math.round(rect.width)); H = Math.max(1, Math.round(rect.height));
+        canvas.width = W * dpr; canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        draw();
+    }
+
+    var running = false, visible = true, lastFrame = 0, lastRead = 0;
+    function frame(now) {
+        if (!running) return;
+        var dt = Math.min(0.05, (now - lastFrame) / 1000) || 0.016;
+        lastFrame = now; clock += dt;
+        var idle = now - lastMove;
+        if (idle > 3500) {                                   /* nobody is steering: run a slow sweep */
+            vTarget = 4 * Math.sin(now / 3600);
+            posTarget = 0.55 + 0.4 * Math.sin(now / 2600);
+        } else if (idle > 260) {
+            vTarget = 0;
+        }
+        v += (vTarget - v) * Math.min(1, dt * 3.5);
+        if (Math.abs(v) < 0.01 && vTarget === 0) v = 0;
+        pos += (posTarget - pos) * Math.min(1, dt * 8);
+        draw();
+        if (now - lastRead > 90) { lastRead = now; readout(); }
+        requestAnimationFrame(frame);
+    }
+    function start() { if (running || !visible || reduceMotion) return; running = true; lastFrame = performance.now(); requestAnimationFrame(frame); }
+    function stop() { running = false; }
+
+    canvas.addEventListener('pointermove', function (e) {
+        var now = performance.now(), rect = canvas.getBoundingClientRect();
+        posTarget = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        if (lastX !== null && now - lastT < 200 && now > lastT) {
+            var mps = Math.max(-MAX_V, Math.min(MAX_V, ((e.clientX - lastX) / ((now - lastT) / 1000)) / 120));
+            vTarget = Math.abs(mps) > Math.abs(vTarget) || mps * vTarget < 0 ? mps : vTarget * 0.9 + mps * 0.1;
+        }
+        lastMove = now; lastX = e.clientX; lastT = now;
+        if (reduceMotion) { v = vTarget; pos = posTarget; draw(); readout(); }
+    });
+    canvas.addEventListener('pointerleave', function () { lastX = null; });
+
+    if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
+    else window.addEventListener('resize', resize);
+    resize();
+    setMode('rf', false);
+
+    if (!reduceMotion) {
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                visible = entries[0].isIntersecting;
+                if (visible) start(); else stop();
+            }).observe(canvas);
+        }
+        document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+        start();
+    }
+})();
+</script>
 </body>
 </html>
